@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="15.1.0.0"
+    CreationTime="2020-09-08 18:21:12 (UTC)"
+    Runtime="COLORADO"
+    RtProjectName="neXt_FutureFactories_Master_S7_1500.TP1500 HMI_1[TP1500 Comfort]"
+    RtProjectFolderName="neXt_FutureFactories_Master_S7_1500.TP1500 HMI_1[TP1500 Comfort]"
+    DeviceType="TP1500 Comfort V2"
+    DisplayOrientation="0"
+    RTReleaseNo="15.1.0.3"
+    ImageReleaseNo="15.1.0.3"
+    RTCV="15.1.0.0"
+    PRCV="15.1.0.0"
+    FirmwareFileName="CP_15_19_22_V2\15.1.0.3\CP_15_19_22_V2_V15_1.fwf"
+    RuntimeFileName="CP_15_19_22_V2\15.1.0.3\CP_15_19_22_V2_V15_1.ruf"
+    RuntimeAddonFolderName="CP_15_19_22_V2" />
+  <FullDownload>pdata.fwc</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>ProjectSettings.hsf</FullDownload>
+  <FullDownload>DeviceSettings.hsf</FullDownload>
+</DownloadTask>

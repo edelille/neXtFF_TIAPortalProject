@@ -1,0 +1,1724 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Mit XMLSpy v2016 rel. 2 (x64) (http://www.altova.com) von Christoph Klee (SEW-Eurodrive GmbH & Co.KG) bearbeitet -->
+<!--History: GSDML-V2.1-SEW-MFE-xxxxxxxx: Erste Version für MFE / GSDML-V2.25-SEW-MFE52A-20151009-xxxxxx: Für Firmware .11 mit MRP-->
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.25.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x010A" DeviceID="0x0006">
+			<InfoText TextId="MFE"/>
+			<VendorName Value="SEW"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="Drives" ProductFamily="SEW"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<DeviceAccessPointItem ID="MFE" PhysicalSlots="0..5" ModuleIdentNumber="0x000000F8" MinDeviceInterval="128" ImplementationType="NetArm" ExtendedAddressAssignmentSupported="false" DeviceAccessSupported="true" DNS_CompatibleName="SEW-MFE" FixedInSlots="0" ObjectUUID_LocalIndex="1" WebServer="http://:80/">
+					<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+						<Name TextId="MFE Classic"/>
+						<InfoText TextId="MFE Classic mit PROFINET IO"/>
+						<VendorName Value="SEW"/>
+						<HardwareRelease Value="V10"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<IOConfigData MaxInputLength="512" MaxOutputLength="512"/>
+					<UseableModules>
+						<!--Die Referenzen zeigen auf die Module der ModuleList -->
+						<ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..5" UsedInSlots="2..4" FixedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="3" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="11" AllowedInSlots="3"/>
+						<ModuleItemRef ModuleItemTarget="12" AllowedInSlots="4"/>
+						<ModuleItemRef ModuleItemTarget="13" AllowedInSlots="5"/>
+						<ModuleItemRef ModuleItemTarget="14" AllowedInSlots="5" UsedInSlots="5"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP MFE" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung DAP"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+									<Ref ValueItemTarget="DiagAlarmPort1" DataType="Bit" ByteOffset="0" BitOffset="1" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmPort1"/>
+									<Ref ValueItemTarget="DiagAlarmPort2" DataType="Bit" ByteOffset="0" BitOffset="2" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmPort2"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+								<Name TextId="MFE Classic"/>
+								<InfoText TextId="MFE Classic mit PROFINET IO"/>
+								<VendorName Value="SEW"/>
+								<HardwareRelease Value="V10"/>
+								<SoftwareRelease Value="V1.0"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="MFE PDEV" PhysicalSlots="0..5" ModuleIdentNumber="0x000000F8" MinDeviceInterval="128" ImplementationType="NetArm" ExtendedAddressAssignmentSupported="false" DeviceAccessSupported="true" DNS_CompatibleName="SEW-MFE" FixedInSlots="0" ObjectUUID_LocalIndex="1" WebServer="http://:80/" RequiredSchemaVersion="V2.1">
+					<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+						<Name TextId="MFE Classic PDEV"/>
+						<InfoText TextId="MFE Classic mit PROFINET IO PDEV"/>
+						<VendorName Value="SEW"/>
+						<OrderNumber Value="182x xxx x"/>
+						<HardwareRelease Value="V10"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="PDEV_Interface"/>
+						<SubslotItem SubslotNumber="32769" TextId="PDEV_Port1"/>
+						<SubslotItem SubslotNumber="32770" TextId="PDEV_Port2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="512" MaxOutputLength="512"/>
+					<UseableModules>
+						<!--Die Referenzen zeigen auf die Module der ModuleList -->
+						<ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..5" UsedInSlots="2..4" FixedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="3" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="11" AllowedInSlots="3"/>
+						<ModuleItemRef ModuleItemTarget="12" AllowedInSlots="4"/>
+						<ModuleItemRef ModuleItemTarget="13" AllowedInSlots="5"/>
+						<ModuleItemRef ModuleItemTarget="14" AllowedInSlots="5" UsedInSlots="5"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP MFE PDEV" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung DAP"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<!--Waehrend der Hochlaufphase sollen die in der RecordDataList eingetragenen Parameter ausgetauscht werden. -->
+							<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+								<Name TextId="MFE Classic PDEV"/>
+								<InfoText TextId="MFE Classic mit PROFINET IO PDEV"/>
+								<VendorName Value="SEW"/>
+								<HardwareRelease Value="V10"/>
+								<SoftwareRelease Value="V1.0"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface SEW" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" TextId="T_DAP_InterfaceModule" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" IsochroneModeSupported="false">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+								<TimingProperties SendClock="32" ReductionRatio="4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port_1" SubmoduleIdentNumber="0x0002" SubslotNumber="32769" TextId="T_Port1" LinkStateDiagnosisCapability="Up+Down"/>
+						<PortSubmoduleItem ID="Port_2" SubmoduleIdentNumber="0x0003" SubslotNumber="32770" TextId="T_Port2" LinkStateDiagnosisCapability="Up+Down"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="MFE PDEV MRP" PhysicalSlots="0..5" ModuleIdentNumber="0x000000F8" MinDeviceInterval="128" ImplementationType="NetArm" ExtendedAddressAssignmentSupported="false" DeviceAccessSupported="true" DNS_CompatibleName="SEW-MFE" FixedInSlots="0" ObjectUUID_LocalIndex="1" WebServer="http://:80/" RequiredSchemaVersion="V2.2">
+					<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+						<Name TextId="MFE Classic PDEV MRP"/>
+						<InfoText TextId="MFE Classic mit PROFINET IO PDEV MRP"/>
+						<VendorName Value="SEW"/>
+						<OrderNumber Value="18242154"/>
+						<HardwareRelease Value="V10"/>
+						<SoftwareRelease Value="V1.1"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="PDEV_Interface"/>
+						<SubslotItem SubslotNumber="32769" TextId="PDEV_Port1"/>
+						<SubslotItem SubslotNumber="32770" TextId="PDEV_Port2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="512" MaxOutputLength="512"/>
+					<UseableModules>
+						<!--Die Referenzen zeigen auf die Module der ModuleList -->
+						<ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..5" UsedInSlots="2..4" FixedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="3" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="11" AllowedInSlots="3"/>
+						<ModuleItemRef ModuleItemTarget="12" AllowedInSlots="4"/>
+						<ModuleItemRef ModuleItemTarget="13" AllowedInSlots="5"/>
+						<ModuleItemRef ModuleItemTarget="14" AllowedInSlots="5" UsedInSlots="5"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP MFE PDEV MRP" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung DAP"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<!--Waehrend der Hochlaufphase sollen die in der RecordDataList eingetragenen Parameter ausgetauscht werden. -->
+							<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+								<Name TextId="MFE Classic PDEV MRP"/>
+								<InfoText TextId="MFE Classic mit PROFINET IO PDEV MRP"/>
+								<VendorName Value="SEW"/>
+								<HardwareRelease Value="V10"/>
+								<SoftwareRelease Value="V1.0"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface Classic MRP" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" TextId="T_DAP_InterfaceModule" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" IsochroneModeSupported="false">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+								<TimingProperties SendClock="32" ReductionRatio="4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port_1 Classic mrp" SubmoduleIdentNumber="0x0002" SubslotNumber="32769" TextId="T_Port1" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port_2 Classic mrp" SubmoduleIdentNumber="0x0003" SubslotNumber="32770" TextId="T_Port2" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+				<DeviceAccessPointItem ID="MFE PDEV MRP 3MM" PhysicalSlots="0..7" ModuleIdentNumber="0x000000F8" MinDeviceInterval="128" ImplementationType="NetArm" ExtendedAddressAssignmentSupported="false" DeviceAccessSupported="true" DNS_CompatibleName="SEW-MFE" FixedInSlots="0" ObjectUUID_LocalIndex="1" WebServer="http://:80/" RequiredSchemaVersion="V2.2">
+					<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+						<Name TextId="MFE Classic PDEV MRP 3MM"/>
+						<InfoText TextId="MFE Classic mit PROFINET IO PDEV MRP 3MM"/>
+						<VendorName Value="SEW"/>
+						<OrderNumber Value="18242154"/>
+						<HardwareRelease Value="V10"/>
+						<SoftwareRelease Value="V1.2"/>
+					</ModuleInfo>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="PDEV_Interface"/>
+						<SubslotItem SubslotNumber="32769" TextId="PDEV_Port1"/>
+						<SubslotItem SubslotNumber="32770" TextId="PDEV_Port2"/>
+					</SubslotList>
+					<IOConfigData MaxInputLength="512" MaxOutputLength="512"/>
+					<UseableModules>
+						<!--Die Referenzen zeigen auf die Module der ModuleList -->
+						<ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..7" UsedInSlots="2 3 4 6 7" FixedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="3" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="11" AllowedInSlots="3"/>
+						<ModuleItemRef ModuleItemTarget="12" AllowedInSlots="4"/>
+						<ModuleItemRef ModuleItemTarget="13" AllowedInSlots="5..7"/>
+						<ModuleItemRef ModuleItemTarget="14" AllowedInSlots="5..7" UsedInSlots="5"/>
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP MFE PDEV MRP 3MM" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung DAP"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<!--Waehrend der Hochlaufphase sollen die in der RecordDataList eingetragenen Parameter ausgetauscht werden. -->
+							<ModuleInfo CategoryRef="Profinet IO Anschaltung">
+								<Name TextId="MFE Classic PDEV MRP 3MM"/>
+								<InfoText TextId="MFE Classic mit PROFINET IO PDEV MRP 3MM"/>
+								<VendorName Value="SEW"/>
+								<HardwareRelease Value="V10"/>
+								<SoftwareRelease Value="V1.2"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="Interface Classic MRP 3MM" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" TextId="T_DAP_InterfaceModule" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" IsochroneModeSupported="false">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+								<TimingProperties SendClock="32" ReductionRatio="4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="Port_1 Classic mrp 3MM" SubmoduleIdentNumber="0x0002" SubslotNumber="32769" TextId="T_Port1" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true"/>
+						<PortSubmoduleItem ID="Port_2 Classic mrp 3MM" SubmoduleIdentNumber="0x0003" SubslotNumber="32770" TextId="T_Port2" LinkStateDiagnosisCapability="Up+Down" IsDefaultRingport="true"/>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+			<ModuleList>
+				<!--Leer - Modul-->
+				<ModuleItem ID="1" ModuleIdentNumber="0x00000064">
+					<ModuleInfo>
+						<Name TextId="Leermodul"/>
+						<InfoText TextId="Info Leermodul"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1"/>
+							<RecordDataList/>
+							<ModuleInfo>
+								<Name TextId="Leermodul"/>
+								<InfoText TextId="Info Leermodul"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--Gesamtstatus Movifit-->
+				<ModuleItem ID="3" ModuleIdentNumber="0x0000006d">
+					<ModuleInfo CategoryRef="MFT Status">
+						<Name TextId="Status Movifit"/>
+						<InfoText TextId="Info Status Movifit"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input>
+									<DataItem DataType="Unsigned16" UseAsBits="false" TextId="Statusword"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung SLOT"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo CategoryRef="MFT Status">
+								<Name TextId="Status Movifit"/>
+								<InfoText TextId="Info Status Movifit"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--Digitale Inputs-->
+				<ModuleItem ID="11" ModuleIdentNumber="0x00000068">
+					<ModuleInfo CategoryRef="DI Module">
+						<Name TextId="4 6 DI"/>
+						<InfoText TextId="Info 4 6 DI"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="Item consistency">
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="4 6 DI"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung SLOT"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="false" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo CategoryRef="DI Module">
+								<Name TextId="4 6 DI"/>
+								<InfoText TextId="Info 4 6 DI"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--Digitale Outputs-->
+				<ModuleItem ID="12" ModuleIdentNumber="0x0000006A">
+					<ModuleInfo CategoryRef="DO Module">
+						<Name TextId="2 DO"/>
+						<InfoText TextId="Info 2 DO"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Output Consistency="Item consistency">
+									<DataItem DataType="Unsigned8" UseAsBits="true" TextId="2 DO"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung SLOT"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="false" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo CategoryRef="DO Module">
+								<Name TextId="2 DO"/>
+								<InfoText TextId="Info 2 DO"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--Movimot-->
+				<ModuleItem ID="13" ModuleIdentNumber="0x0000006B">
+					<ModuleInfo CategoryRef="Movimot">
+						<Name TextId="MM 2PD"/>
+						<InfoText TextId="Info MM 2PD"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="PI0"/>
+									<DataItem DataType="Unsigned16" TextId="PI1"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="PO0"/>
+									<DataItem DataType="Unsigned16" TextId="PO1"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung SLOT"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo CategoryRef="Movimot">
+								<Name TextId="MM 2PD"/>
+								<InfoText TextId="Info MM 2PD"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<ModuleItem ID="14" ModuleIdentNumber="0x0000006C">
+					<ModuleInfo CategoryRef="Movimot">
+						<Name TextId="MM 3PD"/>
+						<InfoText TextId="Info MM 3PD"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x00000000">
+							<IOData IOPS_Length="1" IOCS_Length="1">
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="PI0"/>
+									<DataItem DataType="Unsigned16" TextId="PI1"/>
+									<DataItem DataType="Unsigned16" TextId="PI2"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="PO0"/>
+									<DataItem DataType="Unsigned16" TextId="PO1"/>
+									<DataItem DataType="Unsigned16" TextId="PO2"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="8200" Length="4" TransferSequence="0">
+									<Name TextId="Alarmeinstellung SLOT"/>
+									<Const Data="0x00,0x00,0x00,0x00" ByteOffset="0"/>
+									<!--Diese Referenzen zeigen auf Einträge der ValueList -->
+									<Ref ValueItemTarget="DiagAlarmEnabling" DataType="Bit" ByteOffset="0" BitOffset="0" DefaultValue="0" Changeable="true" Visible="true" TextId="ID_DiagAlarmEnabling"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo CategoryRef="Movimot">
+								<Name TextId="MM 3PD"/>
+								<InfoText TextId="Info MM 3PD"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+			</ModuleList>
+			<ValueList>
+				<ValueItem ID="DiagAlarmEnabling">
+					<Assignments>
+						<Assign Content="0" TextId="Off"/>
+						<Assign Content="1" TextId="On"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="DiagAlarmPort1">
+					<Assignments>
+						<Assign Content="0" TextId="Keine Überwachung"/>
+						<Assign Content="1" TextId="Link Down erzeugt kommenden Alarm"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="DiagAlarmPort2">
+					<Assignments>
+						<Assign Content="0" TextId="Keine Überwachung"/>
+						<Assign Content="1" TextId="Link Down erzeugt kommenden Alarm"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="BdDxAlarmPort1">
+					<Assignments>
+						<Assign Content="0" TextId="Keine Überwachung"/>
+						<Assign Content="1" TextId="Baudrate 10MBit oder Halbduplex - Mode erzeugt kommenden Alarm"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="BdDxAlarmPort2">
+					<Assignments>
+						<Assign Content="0" TextId="Keine Überwachung"/>
+						<Assign Content="1" TextId="Baudrate 10MBit oder Halbduplex - Mode erzeugt kommenden Alarm"/>
+					</Assignments>
+				</ValueItem>
+			</ValueList>
+			<ChannelDiagList>
+				<!--ACHTUNG: Der Nachfolgende Block wird automatisch erzeugt, bitte das Tag nicht verschieben!!!  Es können ChannelDiagItems hinzugefügt werden, diese gehen beim Mergen nicht verloren.-->
+				<!--AUTO_MERGE_TAG_START_DIAGLIST-->
+				<!--***********************************-->
+				<!-- GsdmlBuilder(Auto): GSDML ChanneldDiag - OLD Values-->
+				<!--***********************************-->
+				<ChannelDiagItem ErrorType="20505">
+					<Name TextId="F25 EEPROM"/>
+					<Help TextId="FS7x Res Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20508">
+					<Name TextId="F28 Feldbus Timeout"/>
+					<Help TextId="F28 Feldbus Timeout Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20517">
+					<Name TextId="F37 System-Watchdog"/>
+					<Help TextId="F37 System-Watchdog Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20518">
+					<Name TextId="F38 System-Software"/>
+					<Help TextId="F38 System-Software Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20525">
+					<Name TextId="F45 Initialisierung"/>
+					<Help TextId="F45 Initialisierung Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20578">
+					<Name TextId="F98 CRC Error Flash"/>
+					<Help TextId="F98 CRC Error Flash Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20591">
+					<Name TextId="F111 Komm Timeout Tn"/>
+					<Help TextId="F111 Komm Timeout Tn Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20592">
+					<Name TextId="F112 Peripheriefehler"/>
+					<Help TextId="F112 Peripheriefehler Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20601">
+					<Name TextId="F121 Automatischer Gerätetausch"/>
+					<Help TextId="F121 Automatischer Gerätetausch Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="20606">
+					<Name TextId="F126 Fehler LWL-Konverter"/>
+					<Help TextId="F126 Fehler LWL-Konverter Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24065">
+					<Name TextId="Switch Port 1 Down"/>
+					<Help TextId="Switch Port 1 Down Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24066">
+					<Name TextId="Switch Port 2 Down"/>
+					<Help TextId="Switch Port 2 Down Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24325">
+					<Name TextId="FS5 Fehler Lastspannungsversorgung"/>
+					<Help TextId="FS5 Fehler Lastspannungsversorgung Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24326">
+					<Name TextId="FS6 Versionskonflikt"/>
+					<Help TextId="FS6 Versionskonflikt Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24327">
+					<Name TextId="FS7 Profisafe Adresse"/>
+					<Help TextId="FS7 Profisafe Adresse Hilfetext"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24447">
+					<Name TextId="FSX F Option Para"/>
+					<Help TextId="FSX F Option Para Hilfetext"/>
+				</ChannelDiagItem>
+				<!--***********************************-->
+				<!-- GsdmlBuilder(Auto): GSDML ChanneldDiag - NEW and interleaved Values-->
+				<!--***********************************-->
+				<ChannelDiagItem ErrorType="64">
+					<Name TextId="TID_FPS8040_SE_FCS_SP_ERRFPAR_01"/>
+					<Help TextId="TID_FPS8040_SE_FCS_SP_ERRFPAR_01_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="65">
+					<Name TextId="TID_FPS8041_SE_FCS_SP_ERRFPAR_02"/>
+					<Help TextId="TID_FPS8041_SE_FCS_SP_ERRFPAR_02_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="66">
+					<Name TextId="TID_FPS8042_SE_FCS_SP_ERRFPAR_03"/>
+					<Help TextId="TID_FPS8042_SE_FCS_SP_ERRFPAR_03_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="67">
+					<Name TextId="TID_FPS8043_SE_FCS_SP_ERRFPAR_04"/>
+					<Help TextId="TID_FPS8043_SE_FCS_SP_ERRFPAR_04_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="68">
+					<Name TextId="TID_FPS8044_SE_FCS_SP_ERRFPAR_05"/>
+					<Help TextId="TID_FPS8044_SE_FCS_SP_ERRFPAR_05_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="69">
+					<Name TextId="TID_FPS8045_SE_FCS_SP_ERRFPAR_06"/>
+					<Help TextId="TID_FPS8045_SE_FCS_SP_ERRFPAR_06_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="70">
+					<Name TextId="TID_FPS8046_SE_FCS_SP_ERRFPAR_07"/>
+					<Help TextId="TID_FPS8046_SE_FCS_SP_ERRFPAR_07_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="71">
+					<Name TextId="TID_FPS8047_SE_FCS_SP_ERRFPAR_08"/>
+					<Help TextId="TID_FPS8047_SE_FCS_SP_ERRFPAR_08_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="72">
+					<Name TextId="TID_FPS8048_SE_FCS_SP_ERRFPAR_09"/>
+					<Help TextId="TID_FPS8048_SE_FCS_SP_ERRFPAR_09_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="73">
+					<Name TextId="TID_FPS8049_SE_FCS_SP_ERRFPAR_10"/>
+					<Help TextId="TID_FPS8049_SE_FCS_SP_ERRFPAR_10_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="74">
+					<Name TextId="TID_FPS804A_SE_FCS_SP_ERRFPAR_11"/>
+					<Help TextId="TID_FPS804A_SE_FCS_SP_ERRFPAR_11_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="75">
+					<Name TextId="TID_FPS804B_SE_FCS_SP_ERRFPAR_12"/>
+					<Help TextId="TID_FPS804B_SE_FCS_SP_ERRFPAR_12_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="76">
+					<Name TextId="TID_FPS804C_SE_FCS_SP_ERRFPAR_13"/>
+					<Help TextId="TID_FPS804C_SE_FCS_SP_ERRFPAR_13_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="77">
+					<Name TextId="TID_FPS804D_SE_FCS_SP_ERRFPAR_14"/>
+					<Help TextId="TID_FPS804D_SE_FCS_SP_ERRFPAR_14_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="78">
+					<Name TextId="TID_FPS804E_SE_FCS_SP_ERRFPAR_15"/>
+					<Help TextId="TID_FPS804E_SE_FCS_SP_ERRFPAR_15_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="79">
+					<Name TextId="TID_FPS804F_SE_FCS_SP_ERRFPAR_16"/>
+					<Help TextId="TID_FPS804F_SE_FCS_SP_ERRFPAR_16_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24320">
+					<Name TextId="TID_FS0000_SE_SAFETY_OPTION_ERROR"/>
+					<Help TextId="TID_FS0000_SE_SAFETY_OPTION_ERROR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24321">
+					<Name TextId="TID_FS0001_SE_SAFETY_ERR_FATAL_FAULT"/>
+					<Help TextId="TID_FS0001_SE_SAFETY_ERR_FATAL_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24322">
+					<Name TextId="TID_FS0002_SE_SAFETY_ERR_SYS_FAULT"/>
+					<Help TextId="TID_FS0002_SE_SAFETY_ERR_SYS_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24323">
+					<Name TextId="TID_FS0003_SE_SAFETY_ERR_FCOM"/>
+					<Help TextId="TID_FS0003_SE_SAFETY_ERR_FCOM_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24324">
+					<Name TextId="TID_FS0004_SE_SAFETY_ERR_PSP_FAULT"/>
+					<Help TextId="TID_FS0004_SE_SAFETY_ERR_PSP_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24328">
+					<Name TextId="TID_FS0008_SE_FCS_IN_EEPROM"/>
+					<Help TextId="TID_FS0008_SE_FCS_IN_EEPROM_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24340">
+					<Name TextId="TID_FS0014_SE_SAFETY_ERR_SYS_FDI_FAULT"/>
+					<Help TextId="TID_FS0014_SE_SAFETY_ERR_SYS_FDI_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24341">
+					<Name TextId="TID_FS0015_SE_SAFETY_ERR_SHORT_CIRCUIT_FDI_FAULT"/>
+					<Help TextId="TID_FS0015_SE_SAFETY_ERR_SHORT_CIRCUIT_FDI_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24342">
+					<Name TextId="TID_FS0016_SE_FCS_FDI_DISK_0_1"/>
+					<Help TextId="TID_FS0016_SE_FCS_FDI_DISK_0_1_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24344">
+					<Name TextId="TID_FS0018_SE_FCS_FDI_DISK_2_3"/>
+					<Help TextId="TID_FS0018_SE_FCS_FDI_DISK_2_3_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24346">
+					<Name TextId="TID_FS001A_SE_FCS_FDI_DISK_4_5"/>
+					<Help TextId="TID_FS001A_SE_FCS_FDI_DISK_4_5_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24348">
+					<Name TextId="TID_FS001C_SE_FCS_FDI_DISK_6_7"/>
+					<Help TextId="TID_FS001C_SE_FCS_FDI_DISK_6_7_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24352">
+					<Name TextId="TID_FS0020_SE_FCS_FDI_INT_0"/>
+					<Help TextId="TID_FS0020_SE_FCS_FDI_INT_0_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24353">
+					<Name TextId="TID_FS0021_SE_FCS_FDI_INT_1"/>
+					<Help TextId="TID_FS0021_SE_FCS_FDI_INT_1_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24354">
+					<Name TextId="TID_FS0022_SE_FCS_FDI_INT_2"/>
+					<Help TextId="TID_FS0022_SE_FCS_FDI_INT_2_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24355">
+					<Name TextId="TID_FS0023_SE_FCS_FDI_INT_3"/>
+					<Help TextId="TID_FS0023_SE_FCS_FDI_INT_3_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24356">
+					<Name TextId="TID_FS0024_SE_FCS_FDI_INT_4"/>
+					<Help TextId="TID_FS0024_SE_FCS_FDI_INT_4_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24357">
+					<Name TextId="TID_FS0025_SE_FCS_FDI_INT_5"/>
+					<Help TextId="TID_FS0025_SE_FCS_FDI_INT_5_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24358">
+					<Name TextId="TID_FS0026_SE_FCS_FDI_INT_6"/>
+					<Help TextId="TID_FS0026_SE_FCS_FDI_INT_6_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24359">
+					<Name TextId="TID_FS0027_SE_FCS_FDI_INT_7"/>
+					<Help TextId="TID_FS0027_SE_FCS_FDI_INT_7_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24360">
+					<Name TextId="TID_FS0028_SE_FCS_FDI_INT_8"/>
+					<Help TextId="TID_FS0028_SE_FCS_FDI_INT_8_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24361">
+					<Name TextId="TID_FS0029_SE_FCS_FDI_INT_9"/>
+					<Help TextId="TID_FS0029_SE_FCS_FDI_INT_9_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24362">
+					<Name TextId="TID_FS002A_SE_FCS_FDI_INT_A"/>
+					<Help TextId="TID_FS002A_SE_FCS_FDI_INT_A_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24363">
+					<Name TextId="TID_FS002B_SE_FCS_FDI_INT_B"/>
+					<Help TextId="TID_FS002B_SE_FCS_FDI_INT_B_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24364">
+					<Name TextId="TID_FS002C_SE_FCS_FDI_INT_C"/>
+					<Help TextId="TID_FS002C_SE_FCS_FDI_INT_C_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24365">
+					<Name TextId="TID_FS002D_SE_FCS_FDI_INT_D"/>
+					<Help TextId="TID_FS002D_SE_FCS_FDI_INT_D_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24366">
+					<Name TextId="TID_FS002E_SE_FCS_FDI_INT_E"/>
+					<Help TextId="TID_FS002E_SE_FCS_FDI_INT_E_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24367">
+					<Name TextId="TID_FS002F_SE_FCS_FDI_INT_F"/>
+					<Help TextId="TID_FS002F_SE_FCS_FDI_INT_F_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24370">
+					<Name TextId="TID_FS0032_SE_SAFETY_ERR_SYS_FDO_FAULT"/>
+					<Help TextId="TID_FS0032_SE_SAFETY_ERR_SYS_FDO_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24371">
+					<Name TextId="TID_FS0033_SE_SAFETY_ERR_SHORT_CIRCUIT_FDO_FAULT"/>
+					<Help TextId="TID_FS0033_SE_SAFETY_ERR_SHORT_CIRCUIT_FDO_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24372">
+					<Name TextId="TID_FS0034_SE_SAFETY_ERR_OVERLOAD_FDO_FAULT"/>
+					<Help TextId="TID_FS0034_SE_SAFETY_ERR_OVERLOAD_FDO_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24373">
+					<Name TextId="TID_FS0035_SE_FCS_DOS_STATUS_PM_ZWEIG_FAULT"/>
+					<Help TextId="TID_FS0035_SE_FCS_DOS_STATUS_PM_ZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24374">
+					<Name TextId="TID_FS0036_SE_FCS_DOS_IMESS_PM_ZWEIG_FAULT"/>
+					<Help TextId="TID_FS0036_SE_FCS_DOS_IMESS_PM_ZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24375">
+					<Name TextId="TID_FS0037_SE_FCS_DOS_UMESS_MZWEIG_FAULT"/>
+					<Help TextId="TID_FS0037_SE_FCS_DOS_UMESS_MZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24376">
+					<Name TextId="TID_FS0038_SE_FCS_DOS_INT_DO_HW_FAULT"/>
+					<Help TextId="TID_FS0038_SE_FCS_DOS_INT_DO_HW_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24377">
+					<Name TextId="TID_FS0039_SE_FCS_DO0_STATUS_PM_ZWEIG_FAULT"/>
+					<Help TextId="TID_FS0039_SE_FCS_DO0_STATUS_PM_ZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24378">
+					<Name TextId="TID_FS003A_SE_FCS_DO0_IMESS_PM_ZWEIG_FAULT"/>
+					<Help TextId="TID_FS003A_SE_FCS_DO0_IMESS_PM_ZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24379">
+					<Name TextId="TID_FS003B_SE_FCS_DO0_UMESS_MZWEIG_FAULT"/>
+					<Help TextId="TID_FS003B_SE_FCS_DO0_UMESS_MZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24380">
+					<Name TextId="TID_FS003C_SE_FCS_DO0_INT_DO_HW_FAULT"/>
+					<Help TextId="TID_FS003C_SE_FCS_DO0_INT_DO_HW_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24381">
+					<Name TextId="TID_FS003D_SE_FCS_DO1_STATUS_PM_ZWEIG_FAULT"/>
+					<Help TextId="TID_FS003D_SE_FCS_DO1_STATUS_PM_ZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24382">
+					<Name TextId="TID_FS003E_SE_FCS_DO1_IMESS_PM_ZWEIG_FAULT"/>
+					<Help TextId="TID_FS003E_SE_FCS_DO1_IMESS_PM_ZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24383">
+					<Name TextId="TID_FS003F_SE_FCS_DO1_UMESS_MZWEIG_FAULT"/>
+					<Help TextId="TID_FS003F_SE_FCS_DO1_UMESS_MZWEIG_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24384">
+					<Name TextId="TID_FS0040_SE_FCS_DO1_INT_DO_HW_FAULT"/>
+					<Help TextId="TID_FS0040_SE_FCS_DO1_INT_DO_HW_FAULT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24385">
+					<Name TextId="TID_FS0041_SE_FCS_DOS_DRAHTBRUCH"/>
+					<Help TextId="TID_FS0041_SE_FCS_DOS_DRAHTBRUCH_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24386">
+					<Name TextId="TID_FS0042_SE_FCS_DO0_DRAHTBRUCH"/>
+					<Help TextId="TID_FS0042_SE_FCS_DO0_DRAHTBRUCH_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24387">
+					<Name TextId="TID_FS0043_SE_FCS_DO1_DRAHTBRUCH"/>
+					<Help TextId="TID_FS0043_SE_FCS_DO1_DRAHTBRUCH_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24400">
+					<Name TextId="TID_FS0050_SE_FCS_SLS0_N_MAX"/>
+					<Help TextId="TID_FS0050_SE_FCS_SLS0_N_MAX_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24401">
+					<Name TextId="TID_FS0051_SE_FCS_SLS1_N_MAX"/>
+					<Help TextId="TID_FS0051_SE_FCS_SLS1_N_MAX_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24402">
+					<Name TextId="TID_FS0052_SE_FCS_SLS2_N_MAX"/>
+					<Help TextId="TID_FS0052_SE_FCS_SLS2_N_MAX_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24403">
+					<Name TextId="TID_FS0053_SE_FCS_SLS3_N_MAX"/>
+					<Help TextId="TID_FS0053_SE_FCS_SLS3_N_MAX_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24404">
+					<Name TextId="TID_FS0054_SE_FCS_SLS0_RAMP"/>
+					<Help TextId="TID_FS0054_SE_FCS_SLS0_RAMP_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24405">
+					<Name TextId="TID_FS0055_SE_FCS_SLS1_RAMP"/>
+					<Help TextId="TID_FS0055_SE_FCS_SLS1_RAMP_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24406">
+					<Name TextId="TID_FS0056_SE_FCS_SLS2_RAMP"/>
+					<Help TextId="TID_FS0056_SE_FCS_SLS2_RAMP_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24407">
+					<Name TextId="TID_FS0057_SE_FCS_SLS3_RAMP"/>
+					<Help TextId="TID_FS0057_SE_FCS_SLS3_RAMP_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24408">
+					<Name TextId="TID_FS0058_SE_FCS_SLS0_CONST_R"/>
+					<Help TextId="TID_FS0058_SE_FCS_SLS0_CONST_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24409">
+					<Name TextId="TID_FS0059_SE_FCS_SLS1_CONST_R"/>
+					<Help TextId="TID_FS0059_SE_FCS_SLS1_CONST_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24410">
+					<Name TextId="TID_FS005A_SE_FCS_SLS2_CONST_R"/>
+					<Help TextId="TID_FS005A_SE_FCS_SLS2_CONST_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24411">
+					<Name TextId="TID_FS005B_SE_FCS_SLS3_CONST_R"/>
+					<Help TextId="TID_FS005B_SE_FCS_SLS3_CONST_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24412">
+					<Name TextId="TID_FS005C_SE_FCS_SLS0_CONST_L"/>
+					<Help TextId="TID_FS005C_SE_FCS_SLS0_CONST_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24413">
+					<Name TextId="TID_FS005D_SE_FCS_SLS1_CONST_L"/>
+					<Help TextId="TID_FS005D_SE_FCS_SLS1_CONST_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24414">
+					<Name TextId="TID_FS005E_SE_FCS_SLS2_CONST_L"/>
+					<Help TextId="TID_FS005E_SE_FCS_SLS2_CONST_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24415">
+					<Name TextId="TID_FS005F_SE_FCS_SLS3_CONST_L"/>
+					<Help TextId="TID_FS005F_SE_FCS_SLS3_CONST_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24416">
+					<Name TextId="TID_FS0060_SE_FCS_SLS0_RAMP_GEGEN"/>
+					<Help TextId="TID_FS0060_SE_FCS_SLS0_RAMP_GEGEN_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24417">
+					<Name TextId="TID_FS0061_SE_FCS_SLS1_RAMP_GEGEN"/>
+					<Help TextId="TID_FS0061_SE_FCS_SLS1_RAMP_GEGEN_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24418">
+					<Name TextId="TID_FS0062_SE_FCS_SLS2_RAMP_GEGEN"/>
+					<Help TextId="TID_FS0062_SE_FCS_SLS2_RAMP_GEGEN_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24419">
+					<Name TextId="TID_FS0063_SE_FCS_SLS3_RAMP_GEGEN"/>
+					<Help TextId="TID_FS0063_SE_FCS_SLS3_RAMP_GEGEN_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24420">
+					<Name TextId="TID_FS0064_SE_FCS_SS1A_N_MAX"/>
+					<Help TextId="TID_FS0064_SE_FCS_SS1A_N_MAX_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24421">
+					<Name TextId="TID_FS0065_SE_FCS_SS1A_RAMP"/>
+					<Help TextId="TID_FS0065_SE_FCS_SS1A_RAMP_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24422">
+					<Name TextId="TID_FS0066_SE_FCS_SS1A_STANDSTILL"/>
+					<Help TextId="TID_FS0066_SE_FCS_SS1A_STANDSTILL_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24423">
+					<Name TextId="TID_FS0067_SE_FCS_STO_BYPASSED"/>
+					<Help TextId="TID_FS0067_SE_FCS_STO_BYPASSED_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24424">
+					<Name TextId="TID_FS0068_SE_FCS_STO_NACHLAUF"/>
+					<Help TextId="TID_FS0068_SE_FCS_STO_NACHLAUF_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24432">
+					<Name TextId="TID_FS0070_SE_FCS_SDI0_DIR_R"/>
+					<Help TextId="TID_FS0070_SE_FCS_SDI0_DIR_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24433">
+					<Name TextId="TID_FS0071_SE_FCS_SDI1_DIR_R"/>
+					<Help TextId="TID_FS0071_SE_FCS_SDI1_DIR_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24434">
+					<Name TextId="TID_FS0072_SE_FCS_SDI2_DIR_R"/>
+					<Help TextId="TID_FS0072_SE_FCS_SDI2_DIR_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24435">
+					<Name TextId="TID_FS0073_SE_FCS_SDI3_DIR_R"/>
+					<Help TextId="TID_FS0073_SE_FCS_SDI3_DIR_R_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24436">
+					<Name TextId="TID_FS0074_SE_FCS_SDI0_DIR_L"/>
+					<Help TextId="TID_FS0074_SE_FCS_SDI0_DIR_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24437">
+					<Name TextId="TID_FS0075_SE_FCS_SDI1_DIR_L"/>
+					<Help TextId="TID_FS0075_SE_FCS_SDI1_DIR_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24438">
+					<Name TextId="TID_FS0076_SE_FCS_SDI2_DIR_L"/>
+					<Help TextId="TID_FS0076_SE_FCS_SDI2_DIR_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24439">
+					<Name TextId="TID_FS0077_SE_FCS_SDI3_DIR_L"/>
+					<Help TextId="TID_FS0077_SE_FCS_SDI3_DIR_L_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24448">
+					<Name TextId="TID_FS0080_SE_FCS_PARA_DATASET_UNPLAUSIBLE"/>
+					<Help TextId="TID_FS0080_SE_FCS_PARA_DATASET_UNPLAUSIBLE_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24449">
+					<Name TextId="TID_FS0081_SE_FCS_PARA_DATASET_CORRUPT"/>
+					<Help TextId="TID_FS0081_SE_FCS_PARA_DATASET_CORRUPT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24450">
+					<Name TextId="TID_FS0082_SE_FCS_PARA_DATASET_INCOMPATIBLE"/>
+					<Help TextId="TID_FS0082_SE_FCS_PARA_DATASET_INCOMPATIBLE_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24451">
+					<Name TextId="TID_FS0083_SE_FCS_PARA_NO_DEVICE_CHANGE"/>
+					<Help TextId="TID_FS0083_SE_FCS_PARA_NO_DEVICE_CHANGE_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24452">
+					<Name TextId="TID_FS0084_SE_FCS_PARA_ABOX_EMPTY"/>
+					<Help TextId="TID_FS0084_SE_FCS_PARA_ABOX_EMPTY_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24453">
+					<Name TextId="TID_FS0085_SE_FCS_PARA_ABOX_STORE_ERROR"/>
+					<Help TextId="TID_FS0085_SE_FCS_PARA_ABOX_STORE_ERROR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24454">
+					<Name TextId="TID_FS0086_SE_FCS_PARA_EEPROM_CORRUPT"/>
+					<Help TextId="TID_FS0086_SE_FCS_PARA_EEPROM_CORRUPT_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24455">
+					<Name TextId="TID_FS0087_SE_FCS_PARA_EBOX_COM_ERROR"/>
+					<Help TextId="TID_FS0087_SE_FCS_PARA_EBOX_COM_ERROR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24456">
+					<Name TextId="TID_FS0088_SE_FCS_PARA_APPR_STORE_ERROR"/>
+					<Help TextId="TID_FS0088_SE_FCS_PARA_APPR_STORE_ERROR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24464">
+					<Name TextId="TID_FS0090_SE_FCS_ENC_ENCODER_ERROR"/>
+					<Help TextId="TID_FS0090_SE_FCS_ENC_ENCODER_ERROR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24465">
+					<Name TextId="TID_FS0091_SE_FCS_ENC_ENCODER_SUPP_ERROR"/>
+					<Help TextId="TID_FS0091_SE_FCS_ENC_ENCODER_SUPP_ERROR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24466">
+					<Name TextId="TID_FS0092_SE_FCS_ENC_ENCODER_SPEED_EXCEED"/>
+					<Help TextId="TID_FS0092_SE_FCS_ENC_ENCODER_SPEED_EXCEED_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="24467">
+					<Name TextId="TID_FS0093_SE_FCS_ENC_ENCODER_SIGNAL_BAD"/>
+					<Help TextId="TID_FS0093_SE_FCS_ENC_ENCODER_SIGNAL_BAD_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="28480">
+					<Name TextId="TID_FS1040_SE_FCS_HWDIAG_TEMPERATUR_ZUHOCH"/>
+					<Help TextId="TID_FS1040_SE_FCS_HWDIAG_TEMPERATUR_ZUHOCH_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="28481">
+					<Name TextId="TID_FS1041_SE_FCS_HWDIAG_TEMPERATUR_ZUNIEDRIG"/>
+					<Help TextId="TID_FS1041_SE_FCS_HWDIAG_TEMPERATUR_ZUNIEDRIG_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="28482">
+					<Name TextId="TID_FS1042_SE_FCS_HWDIAG_U24V_ZUHOCH"/>
+					<Help TextId="TID_FS1042_SE_FCS_HWDIAG_U24V_ZUHOCH_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="28483">
+					<Name TextId="TID_FS1043_SE_FCS_HWDIAG_U24V_ZUNIEDRIG"/>
+					<Help TextId="TID_FS1043_SE_FCS_HWDIAG_U24V_ZUNIEDRIG_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32512">
+					<Name TextId="TID_FS2000_SE_FCS_SP_SETPRM"/>
+					<Help TextId="TID_FS2000_SE_FCS_SP_SETPRM_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32513">
+					<Name TextId="TID_FS2001_SE_FCS_SP_SETPRM_SPD_STATE"/>
+					<Help TextId="TID_FS2001_SE_FCS_SP_SETPRM_SPD_STATE_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32514">
+					<Name TextId="TID_FS2002_SE_FCS_SP_CHCFG"/>
+					<Help TextId="TID_FS2002_SE_FCS_SP_CHCFG_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32515">
+					<Name TextId="TID_FS2003_SE_FCS_SP_CHCFG_SPD"/>
+					<Help TextId="TID_FS2003_SE_FCS_SP_CHCFG_SPD_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32516">
+					<Name TextId="TID_FS2004_SE_FCS_SP_CHCFG_SPD_RET_ERR"/>
+					<Help TextId="TID_FS2004_SE_FCS_SP_CHCFG_SPD_RET_ERR_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32517">
+					<Name TextId="TID_FS2005_SE_FCS_SP_SETPRM_CHCFG_SEQ"/>
+					<Help TextId="TID_FS2005_SE_FCS_SP_SETPRM_CHCFG_SEQ_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32518">
+					<Name TextId="TID_FS2006_SE_FCS_SP_SPD"/>
+					<Help TextId="TID_FS2006_SE_FCS_SP_SPD_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32519">
+					<Name TextId="TID_FS2007_SE_FCS_SP_ZYK_DATA_COM"/>
+					<Help TextId="TID_FS2007_SE_FCS_SP_ZYK_DATA_COM_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32520">
+					<Name TextId="TID_FS2008_SE_FCS_SP_ZYK_DATA_WD"/>
+					<Help TextId="TID_FS2008_SE_FCS_SP_ZYK_DATA_WD_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32521">
+					<Name TextId="TID_FS2009_SE_FCS_SP_ZYK_DATA_PAS"/>
+					<Help TextId="TID_FS2009_SE_FCS_SP_ZYK_DATA_PAS_HELP"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="32522">
+					<Name TextId="TID_FS200A_SE_FCS_SP_ZYK_DATA_CLR"/>
+					<Help TextId="TID_FS200A_SE_FCS_SP_ZYK_DATA_CLR_HELP"/>
+				</ChannelDiagItem>
+				<!--AUTO_MERGE_TAG_END_DIAGLIST-->
+			</ChannelDiagList>
+			<GraphicsList>
+				<GraphicItem ID="1" GraphicFile="GSDML-010A-0006-MFE52A">
+				</GraphicItem>
+			</GraphicsList>
+			<CategoryList>
+				<CategoryItem ID="Profinet IO Anschaltung" TextId="Profinet IO Anschaltung"/>
+				<CategoryItem ID="Slot not used" TextId="Slot not used"/>
+				<CategoryItem ID="Safety Module" TextId="Safety Module"/>
+				<CategoryItem ID="MFT Status" TextId="MFT Status"/>
+				<CategoryItem ID="DI Module" TextId="DI Module"/>
+				<CategoryItem ID="DO Module" TextId="DO Module"/>
+				<CategoryItem ID="Movimot" TextId="Movimot"/>
+			</CategoryList>
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<Text TextId="MFE" Value="MFE"/>
+					<Text TextId="MFE Classic" Value="MFE V1.0 OLD"/>
+					<Text TextId="MFE Classic PDEV" Value="MFE V1.0"/>
+					<Text TextId="MFE Classic PDEV MRP" Value="MFE V1.1"/>
+					<Text TextId="MFE Classic PDEV MRP 3MM" Value="MFE V1.2 3xMOVIMOT"/>
+					<Text TextId="MFE Classic mit PROFINET IO" Value="Decentralized Drive System MOVIMOT with PROFINET IO"/>
+					<Text TextId="MFE Classic mit PROFINET IO PDEV" Value="Decentralized Drive System MOVIMOT with PROFINET IO  incl. topology recognition"/>
+					<Text TextId="MFE Classic mit PROFINET IO PDEV MRP" Value="Decentralized Drive System MOVIMOT with PROFINET IO  incl. topology recognition and MRP media redundancy"/>
+					<Text TextId="MFE Classic mit PROFINET IO PDEV MRP 3MM" Value="Decentralized Drive System MOVIMOT with PROFINET IO  incl. topology recognition and MRP media redundancy for 3 MOVIMOT"/>
+					<Text TextId="PDEV_Interface" Value="X1"/>
+					<Text TextId="PDEV_Port1" Value="P1"/>
+					<Text TextId="PDEV_Port2" Value="P2"/>
+					<Text TextId="T_DAP_InterfaceModule" Value="Ethernet Interface"/>
+					<Text TextId="T_Port1" Value="Port 1 - RJ45 (X11)"/>
+					<Text TextId="T_Port2" Value="Port 2 - RJ45 (X12)"/>
+					<Text TextId="Leermodul" Value="Slot not used"/>
+					<Text TextId="Info Leermodul" Value="Slot not used"/>
+					<Text TextId="Status Movifit" Value="MFE Status"/>
+					<Text TextId="Info Status Movifit" Value="MFE Status"/>
+					<Text TextId="Statusword" Value="Statusword"/>
+					<Text TextId="4 6 DI" Value="4/6 DI"/>
+					<Text TextId="Info 4 6 DI" Value="4/6 Digital Inputs"/>
+					<Text TextId="2 DO" Value="2 DO"/>
+					<Text TextId="Info 2 DO" Value="2 Digital Outputs"/>
+					<Text TextId="MM 2PD" Value="MOVIMOT 2PD"/>
+					<Text TextId="MM 3PD" Value="MOVIMOT 3PD"/>
+					<Text TextId="Info MM 2PD" Value="MOVIMOT 2 Process Data Words"/>
+					<Text TextId="Info MM 3PD" Value="MOVIMOT 3 Process Data Words"/>
+					<Text TextId="Slot not used" Value="Slot not used"/>
+					<Text TextId="Profinet IO Anschaltung" Value="MFE"/>
+					<Text TextId="Safety Module" Value="Slot1: Reserved"/>
+					<Text TextId="MFT Status" Value="Slot2: MFE Status"/>
+					<Text TextId="DI Module" Value="Slot3: Digital Inputs"/>
+					<Text TextId="DO Module" Value="Slot4: Digital Outputs"/>
+					<Text TextId="Movimot" Value="Slot5-7: Movimot"/>
+					<Text TextId="2 PD" Value="02 process data words"/>
+					<Text TextId="3 PD" Value="03 process data words"/>
+					<Text TextId="Info 2PD" Value="02 process data words for PLC"/>
+					<Text TextId="Info 3PD" Value="03 process data words for PLC"/>
+					<Text TextId="PI0" Value="Process input data word 0"/>
+					<Text TextId="PI1" Value="Process input data word 1"/>
+					<Text TextId="PI2" Value="Process input data word 2"/>
+					<Text TextId="PO0" Value="Process output data word 0"/>
+					<Text TextId="PO1" Value="Process output data word 1"/>
+					<Text TextId="PO2" Value="Process output data word 2"/>
+					<Text TextId="Alarmeinstellung DAP" Value="Alarm settings (head)"/>
+					<Text TextId="Alarmeinstellung SLOT" Value="Alarm settings (slot)"/>
+					<Text TextId="ID_DiagAlarmEnabling" Value="Enable diagnosis alarms"/>
+					<Text TextId="ID_DiagAlarmPort1" Value="Enable diagnosis alarms port 1 (X11)"/>
+					<Text TextId="ID_DiagAlarmPort2" Value="Enable diagnosis alarms port 2 (X12)"/>
+					<Text TextId="ID_BdDxAlarmPort1" Value="Enable baudrate/duplex alarm port 1 (X11)"/>
+					<Text TextId="ID_BdDxAlarmPort2" Value="Enable baudrate/duplex alarm port 2 (X12)"/>
+					<Text TextId="On" Value="On"/>
+					<Text TextId="Off" Value="Off"/>
+					<Text TextId="Keine Überwachung" Value="Monitoring Off"/>
+					<Text TextId="Link Down erzeugt kommenden Alarm" Value="Dignosis Alarm on Link Down"/>
+					<Text TextId="Baudrate 10MBit oder Halbduplex - Mode erzeugt kommenden Alarm" Value="Diagnosis Alarm on 10 MBit or half duplex mode"/>
+					<!--ACHTUNG: Der Nachfolgende Block wird automatisch erzeugt, bitte das Tag nicht verschieben!!! - Hilfetexte innerhalb des Blocks können geändert werden, diese werden beim mergen automatisch mit übernommen, falls es Fehlercodes zu dem Fehlertext gibt-->
+					<!--AUTO_MERGE_TAG_START_EXTERNALTEXT_EN-->
+					<!--***********************************-->
+					<!-- GsdmlBuilder(Auto): GSDML-TagEN-->
+					<!--***********************************-->
+					<Text TextId="F25 EEPROM" Value="F25 EEPROM"/>
+					<Text TextId="FS7x Res Hilfetext" Value="Reserved"/>
+					<Text TextId="F28 Feldbus Timeout" Value="F28 Fieldbus timeout"/>
+					<Text TextId="F28 Feldbus Timeout Hilfetext" Value="Possible cause: No communication between master and slave within the projected response monitoring."/>
+					<Text TextId="F37 System-Watchdog" Value="F37 System watchdog"/>
+					<Text TextId="F37 System-Watchdog Hilfetext" Value="Possible cause: Error during execution of system software. Contact SEW Service."/>
+					<Text TextId="F38 System-Software" Value="F38 System software"/>
+					<Text TextId="F38 System-Software Hilfetext" Value="Possible cause: Hardware disturbed or defective."/>
+					<Text TextId="F45 Initialisierung" Value="F45 Initialization"/>
+					<Text TextId="F45 Initialisierung Hilfetext" Value="Possible cause: Hardware disturbed or defective."/>
+					<Text TextId="F98 CRC Error Flash" Value="F98 CRC error flash"/>
+					<Text TextId="F98 CRC Error Flash Hilfetext" Value="Possible cause: Internal unit fault. Flash memory defective."/>
+					<Text TextId="F111 Komm Timeout Tn" Value="F111 Timeout Subsystem"/>
+					<Text TextId="F111 Komm Timeout Tn Hilfetext" Value="Possible cause: Communication cable between Movifit and inverter i.e. Movimot unplugged"/>
+					<Text TextId="F112 Peripheriefehler" Value="F112 Peripheral Error"/>
+					<Text TextId="F112 Peripheriefehler Hilfetext" Value="Possible cause: i.e. maintenance switch off. Analyze Movifit Statusword"/>
+					<Text TextId="F121 Automatischer Gerätetausch" Value="F121 Automatic Unit Replacement"/>
+					<Text TextId="F121 Automatischer Gerätetausch Hilfetext" Value="Possible cause: i.e. EasyMode activated."/>
+					<Text TextId="F126 Fehler LWL-Konverter" Value="Fiber optic cable converter error "/>
+					<Text TextId="F126 Fehler LWL-Konverter Hilfetext" Value="Error updating FOC diagnostic values"/>
+					<Text TextId="Switch Port 1 Down" Value="Switch Port 1 (X11) Link Down"/>
+					<Text TextId="Switch Port 1 Down Hilfetext" Value="Check cable."/>
+					<Text TextId="Switch Port 2 Down" Value="Switch Port 2 (X12) Link Down"/>
+					<Text TextId="Switch Port 2 Down Hilfetext" Value="Check cable."/>
+					<Text TextId="FS5 Fehler Lastspannungsversorgung" Value="Error Power Supply"/>
+					<Text TextId="FS5 Fehler Lastspannungsversorgung Hilfetext" Value="Check Power Supply of Safety Option"/>
+					<Text TextId="FS6 Versionskonflikt" Value="Mismatch of Safety Version"/>
+					<Text TextId="FS6 Versionskonflikt Hilfetext" Value="Change Safety Option"/>
+					<Text TextId="FS7 Profisafe Adresse" Value="Profisafe Address not defined"/>
+					<Text TextId="FS7 Profisafe Adresse Hilfetext" Value="Check Profisafe Address."/>
+					<Text TextId="FSX F Option Para" Value="F Init Fault"/>
+					<Text TextId="FSX F Option Para Hilfetext" Value="Set an valid F Destination Addr"/>
+					<Text TextId="TID_FS0000_SE_SAFETY_OPTION_ERROR" Value="Fehler Safety Option"/>
+					<Text TextId="TID_FS0000_SE_SAFETY_OPTION_ERROR_HELP" Value="Warning"/>
+					<Text TextId="TID_FS0001_SE_SAFETY_ERR_FATAL_FAULT" Value="Fatal error"/>
+					<Text TextId="TID_FS0001_SE_SAFETY_ERR_FATAL_FAULT_HELP" Value="Internal sequence error. Switch the 24 V voltage off and on again."/>
+					<Text TextId="TID_FS0002_SE_SAFETY_ERR_SYS_FAULT" Value="System error"/>
+					<Text TextId="TID_FS0002_SE_SAFETY_ERR_SYS_FAULT_HELP" Value="Internal sequence error. Switch the 24 V voltage off and on again."/>
+					<Text TextId="TID_FS0003_SE_SAFETY_ERR_FCOM" Value="F-data exchange error"/>
+					<Text TextId="TID_FS0003_SE_SAFETY_ERR_FCOM_HELP" Value="Error establishing the connection or in cyclic communication. Check configuration and integrate option again."/>
+					<Text TextId="TID_FS0004_SE_SAFETY_ERR_PSP_FAULT" Value="Error in the PSP supply"/>
+					<Text TextId="TID_FS0004_SE_SAFETY_ERR_PSP_FAULT_HELP" Value="Check the installation. Switch the 24 V voltage off and on again."/>
+					<Text TextId="TID_FS0008_SE_FCS_IN_EEPROM" Value="Ext memory DSO error"/>
+					<Text TextId="TID_FS0008_SE_FCS_IN_EEPROM_HELP" Value="Defective EEPROM"/>
+					<Text TextId="TID_FS0014_SE_SAFETY_ERR_SYS_FDI_FAULT" Value="HW diagnostics DI internal error"/>
+					<Text TextId="TID_FS0014_SE_SAFETY_ERR_SYS_FDI_FAULT_HELP" Value="DI error detected caused by an internal test of the input channels on the safety module."/>
+					<Text TextId="TID_FS0015_SE_SAFETY_ERR_SHORT_CIRCUIT_FDI_FAULT" Value="HW diagnostics F-DI short circuit"/>
+					<Text TextId="TID_FS0015_SE_SAFETY_ERR_SHORT_CIRCUIT_FDI_FAULT_HELP" Value="Check external wiring"/>
+					<Text TextId="TID_FS0016_SE_FCS_FDI_DISK_0_1" Value="Discrepancy error F-DI0/1"/>
+					<Text TextId="TID_FS0016_SE_FCS_FDI_DISK_0_1_HELP" Value="DI error Discrepancy FDI 0-1"/>
+					<Text TextId="TID_FS0018_SE_FCS_FDI_DISK_2_3" Value="Discrepancy error F-DI2/3"/>
+					<Text TextId="TID_FS0018_SE_FCS_FDI_DISK_2_3_HELP" Value="DI error Discrepancy FDI 2-3"/>
+					<Text TextId="TID_FS001A_SE_FCS_FDI_DISK_4_5" Value="Discrepancy error F-DI4/5"/>
+					<Text TextId="TID_FS001A_SE_FCS_FDI_DISK_4_5_HELP" Value="DI error Discrepancy FDI 4-5"/>
+					<Text TextId="TID_FS001C_SE_FCS_FDI_DISK_6_7" Value="Discrepancy error F-DI6/7"/>
+					<Text TextId="TID_FS001C_SE_FCS_FDI_DISK_6_7_HELP" Value="DI error Discrepancy FDI 6-7"/>
+					<Text TextId="TID_FS0020_SE_FCS_FDI_INT_0" Value="F-DI0 cross circuit"/>
+					<Text TextId="TID_FS0020_SE_FCS_FDI_INT_0_HELP" Value="DI error Cross-circuit or plausibility check FDI 0"/>
+					<Text TextId="TID_FS0021_SE_FCS_FDI_INT_1" Value="F-DI1 cross circuit"/>
+					<Text TextId="TID_FS0021_SE_FCS_FDI_INT_1_HELP" Value="DI error Cross-circuit or plausibility check FDI 1"/>
+					<Text TextId="TID_FS0022_SE_FCS_FDI_INT_2" Value="F-DI2 cross circuit"/>
+					<Text TextId="TID_FS0022_SE_FCS_FDI_INT_2_HELP" Value="DI error Cross-circuit or plausibility check FDI 2"/>
+					<Text TextId="TID_FS0023_SE_FCS_FDI_INT_3" Value="F-DI3 cross circuit"/>
+					<Text TextId="TID_FS0023_SE_FCS_FDI_INT_3_HELP" Value="DI error Cross-circuit or plausibility check FDI 3"/>
+					<Text TextId="TID_FS0024_SE_FCS_FDI_INT_4" Value="F-DI4 cross circuit"/>
+					<Text TextId="TID_FS0024_SE_FCS_FDI_INT_4_HELP" Value="DI error Cross-circuit or plausibility check FDI 4"/>
+					<Text TextId="TID_FS0025_SE_FCS_FDI_INT_5" Value="F-DI5 cross circuit"/>
+					<Text TextId="TID_FS0025_SE_FCS_FDI_INT_5_HELP" Value="DI error Cross-circuit or plausibility check FDI 5"/>
+					<Text TextId="TID_FS0026_SE_FCS_FDI_INT_6" Value="F-DI6 cross circuit"/>
+					<Text TextId="TID_FS0026_SE_FCS_FDI_INT_6_HELP" Value="DI error Cross-circuit or plausibility check FDI 6"/>
+					<Text TextId="TID_FS0027_SE_FCS_FDI_INT_7" Value="F-DI7 cross circuit"/>
+					<Text TextId="TID_FS0027_SE_FCS_FDI_INT_7_HELP" Value="DI error Cross-circuit or plausibility check FDI 7"/>
+					<Text TextId="TID_FS0028_SE_FCS_FDI_INT_8" Value="F-DI0 wiring fault"/>
+					<Text TextId="TID_FS0028_SE_FCS_FDI_INT_8_HELP" Value="DI error Maximum response time exceeded FDI 0"/>
+					<Text TextId="TID_FS0029_SE_FCS_FDI_INT_9" Value="F-DI1 wiring fault"/>
+					<Text TextId="TID_FS0029_SE_FCS_FDI_INT_9_HELP" Value="DI error Maximum response time exceeded FDI 1"/>
+					<Text TextId="TID_FS002A_SE_FCS_FDI_INT_A" Value="F-DI2 wiring fault"/>
+					<Text TextId="TID_FS002A_SE_FCS_FDI_INT_A_HELP" Value="DI error Maximum response time exceeded FDI 2"/>
+					<Text TextId="TID_FS002B_SE_FCS_FDI_INT_B" Value="F-DI3 wiring fault"/>
+					<Text TextId="TID_FS002B_SE_FCS_FDI_INT_B_HELP" Value="DI error Maximum response time exceeded FDI 3"/>
+					<Text TextId="TID_FS002C_SE_FCS_FDI_INT_C" Value="F-DI4 wiring fault"/>
+					<Text TextId="TID_FS002C_SE_FCS_FDI_INT_C_HELP" Value="DI error Maximum response time exceeded FDI 4"/>
+					<Text TextId="TID_FS002D_SE_FCS_FDI_INT_D" Value="F-DI5 wiring fault"/>
+					<Text TextId="TID_FS002D_SE_FCS_FDI_INT_D_HELP" Value="DI error Maximum response time exceeded FDI 5"/>
+					<Text TextId="TID_FS002E_SE_FCS_FDI_INT_E" Value="F-DI6 wiring fault"/>
+					<Text TextId="TID_FS002E_SE_FCS_FDI_INT_E_HELP" Value="DI error Maximum response time exceeded FDI 6"/>
+					<Text TextId="TID_FS002F_SE_FCS_FDI_INT_F" Value="F-DI7 wiring fault"/>
+					<Text TextId="TID_FS002F_SE_FCS_FDI_INT_F_HELP" Value="DI error Maximum response time exceeded FDI 7"/>
+					<Text TextId="TID_FS0032_SE_SAFETY_ERR_SYS_FDO_FAULT" Value="HW diagnostics DO internal error"/>
+					<Text TextId="TID_FS0032_SE_SAFETY_ERR_SYS_FDO_FAULT_HELP" Value="DO error detected caused by an internal test of the output channels on the safety module."/>
+					<Text TextId="TID_FS0033_SE_SAFETY_ERR_SHORT_CIRCUIT_FDO_FAULT" Value="HW diagnostics F-DO short circuit"/>
+					<Text TextId="TID_FS0033_SE_SAFETY_ERR_SHORT_CIRCUIT_FDO_FAULT_HELP" Value="Check external wiring"/>
+					<Text TextId="TID_FS0034_SE_SAFETY_ERR_OVERLOAD_FDO_FAULT" Value="F-DO overcurrent fault"/>
+					<Text TextId="TID_FS0034_SE_SAFETY_ERR_OVERLOAD_FDO_FAULT_HELP" Value="FDO overload error ? the total current of all outputs is too high"/>
+					<Text TextId="TID_FS0035_SE_FCS_DOS_STATUS_PM_ZWEIG_FAULT" Value="DO STO fault: Cross circuit"/>
+					<Text TextId="TID_FS0035_SE_FCS_DOS_STATUS_PM_ZWEIG_FAULT_HELP" Value="DO STO error ? Status comparison failed in P branch or M branch"/>
+					<Text TextId="TID_FS0036_SE_FCS_DOS_IMESS_PM_ZWEIG_FAULT" Value="DO STO fault: Overcurrent"/>
+					<Text TextId="TID_FS0036_SE_FCS_DOS_IMESS_PM_ZWEIG_FAULT_HELP" Value="DO STO error ? Current limit exceeded in P branch or M branch"/>
+					<Text TextId="TID_FS0037_SE_FCS_DOS_UMESS_MZWEIG_FAULT" Value="DO STO fault: Overvoltage"/>
+					<Text TextId="TID_FS0037_SE_FCS_DOS_UMESS_MZWEIG_FAULT_HELP" Value="DO STO error ? Voltage measurement in M branch, limit value exceeded"/>
+					<Text TextId="TID_FS0038_SE_FCS_DOS_INT_DO_HW_FAULT" Value="DO STO fault: Int measuring error"/>
+					<Text TextId="TID_FS0038_SE_FCS_DOS_INT_DO_HW_FAULT_HELP" Value="DO STO error ? Internal HW current voltage measurement"/>
+					<Text TextId="TID_FS0039_SE_FCS_DO0_STATUS_PM_ZWEIG_FAULT" Value="DO 0 fault: Cross circuit"/>
+					<Text TextId="TID_FS0039_SE_FCS_DO0_STATUS_PM_ZWEIG_FAULT_HELP" Value="DO 00 error ? Status comparison failed in P or M branch"/>
+					<Text TextId="TID_FS003A_SE_FCS_DO0_IMESS_PM_ZWEIG_FAULT" Value="DO 0 fault: Overcurrent"/>
+					<Text TextId="TID_FS003A_SE_FCS_DO0_IMESS_PM_ZWEIG_FAULT_HELP" Value="DO 00 error ? Current limit exceeded in P or M branch"/>
+					<Text TextId="TID_FS003B_SE_FCS_DO0_UMESS_MZWEIG_FAULT" Value="DO 0 fault: Overvoltage"/>
+					<Text TextId="TID_FS003B_SE_FCS_DO0_UMESS_MZWEIG_FAULT_HELP" Value="DO 00 error ? Voltage measurement in M branch, limit value exceeded"/>
+					<Text TextId="TID_FS003C_SE_FCS_DO0_INT_DO_HW_FAULT" Value="DO 0 fault: Int measuring error"/>
+					<Text TextId="TID_FS003C_SE_FCS_DO0_INT_DO_HW_FAULT_HELP" Value="DO 00 error ? Internal HW current voltage measurement"/>
+					<Text TextId="TID_FS003D_SE_FCS_DO1_STATUS_PM_ZWEIG_FAULT" Value="DO 1 fault: Cross circuit"/>
+					<Text TextId="TID_FS003D_SE_FCS_DO1_STATUS_PM_ZWEIG_FAULT_HELP" Value="DO 01 error ? Status comparison failed in P or M branch"/>
+					<Text TextId="TID_FS003E_SE_FCS_DO1_IMESS_PM_ZWEIG_FAULT" Value="DO 1 fault: Overcurrent"/>
+					<Text TextId="TID_FS003E_SE_FCS_DO1_IMESS_PM_ZWEIG_FAULT_HELP" Value="DO 01 error ? Current limit exceeded in P or M branch"/>
+					<Text TextId="TID_FS003F_SE_FCS_DO1_UMESS_MZWEIG_FAULT" Value="DO 1 fault: Overvoltage"/>
+					<Text TextId="TID_FS003F_SE_FCS_DO1_UMESS_MZWEIG_FAULT_HELP" Value="DO 01 error ? Voltage measurement in M branch, limit value exceeded"/>
+					<Text TextId="TID_FS0040_SE_FCS_DO1_INT_DO_HW_FAULT" Value="DO 1 fault: Int measuring error"/>
+					<Text TextId="TID_FS0040_SE_FCS_DO1_INT_DO_HW_FAULT_HELP" Value="DO 01 error ? Internal HW current voltage measurement"/>
+					<Text TextId="TID_FS0041_SE_FCS_DOS_DRAHTBRUCH" Value="DO STO fault: Wire break"/>
+					<Text TextId="TID_FS0041_SE_FCS_DOS_DRAHTBRUCH_HELP" Value="DO STO error ? Wire break detected"/>
+					<Text TextId="TID_FS0042_SE_FCS_DO0_DRAHTBRUCH" Value="DO 0 fault: Wire break"/>
+					<Text TextId="TID_FS0042_SE_FCS_DO0_DRAHTBRUCH_HELP" Value="DO 00 error ? Wire break detected"/>
+					<Text TextId="TID_FS0043_SE_FCS_DO1_DRAHTBRUCH" Value="DO 1 fault: Wire break"/>
+					<Text TextId="TID_FS0043_SE_FCS_DO1_DRAHTBRUCH_HELP" Value="DO 01 error ? Wire break detected"/>
+					<Text TextId="TID_FS0050_SE_FCS_SLS0_N_MAX" Value="SLS0: n_max exceeded"/>
+					<Text TextId="TID_FS0050_SE_FCS_SLS0_N_MAX_HELP" Value="Drive Safety Function SLS0 error: n_max initial direction of rotation during deceleration phase"/>
+					<Text TextId="TID_FS0051_SE_FCS_SLS1_N_MAX" Value="SLS1: n_max exceeded"/>
+					<Text TextId="TID_FS0051_SE_FCS_SLS1_N_MAX_HELP" Value="Drive Safety Function SLS1 error: n_max initial direction of rotation during deceleration phase"/>
+					<Text TextId="TID_FS0052_SE_FCS_SLS2_N_MAX" Value="SLS2: n_max exceeded"/>
+					<Text TextId="TID_FS0052_SE_FCS_SLS2_N_MAX_HELP" Value="Drive Safety Function SLS2 error: n_max initial direction of rotation during deceleration phase"/>
+					<Text TextId="TID_FS0053_SE_FCS_SLS3_N_MAX" Value="SLS3: n_max exceeded"/>
+					<Text TextId="TID_FS0053_SE_FCS_SLS3_N_MAX_HELP" Value="Drive Safety Function SLS3 error: n_max initial direction of rotation during deceleration phase"/>
+					<Text TextId="TID_FS0054_SE_FCS_SLS0_RAMP" Value="SLS0: n_sls exceeded"/>
+					<Text TextId="TID_FS0054_SE_FCS_SLS0_RAMP_HELP" Value="Drive Safety Function SLS0 error: Speed limit exceeded in initial direction of rotation during ramp travel"/>
+					<Text TextId="TID_FS0055_SE_FCS_SLS1_RAMP" Value="SLS1: n_sls exceeded"/>
+					<Text TextId="TID_FS0055_SE_FCS_SLS1_RAMP_HELP" Value="Drive Safety Function SLS1 error: Speed limit exceeded in initial direction of rotation during ramp travel"/>
+					<Text TextId="TID_FS0056_SE_FCS_SLS2_RAMP" Value="SLS2: n_sls exceeded"/>
+					<Text TextId="TID_FS0056_SE_FCS_SLS2_RAMP_HELP" Value="Drive Safety Function SLS2 error: Speed limit exceeded in initial direction of rotation during ramp travel"/>
+					<Text TextId="TID_FS0057_SE_FCS_SLS3_RAMP" Value="SLS3: n_sls exceeded"/>
+					<Text TextId="TID_FS0057_SE_FCS_SLS3_RAMP_HELP" Value="Drive Safety Function SLS3 error: Speed limit exceeded in initial direction of rotation during ramp travel"/>
+					<Text TextId="TID_FS0058_SE_FCS_SLS0_CONST_R" Value="SLS0: n_sls_r exceeded"/>
+					<Text TextId="TID_FS0058_SE_FCS_SLS0_CONST_R_HELP" Value="Drive Safety Function SLS0 error: Speed limit exceeded at constanct travel CW"/>
+					<Text TextId="TID_FS0059_SE_FCS_SLS1_CONST_R" Value="SLS1: n_sls_r exceeded"/>
+					<Text TextId="TID_FS0059_SE_FCS_SLS1_CONST_R_HELP" Value="Drive Safety Function SLS1 error: Speed limit exceeded at constanct travel CW"/>
+					<Text TextId="TID_FS005A_SE_FCS_SLS2_CONST_R" Value="SLS2: n_sls_r exceeded"/>
+					<Text TextId="TID_FS005A_SE_FCS_SLS2_CONST_R_HELP" Value="Drive Safety Function SLS2 error: Speed limit exceeded at constanct travel CW"/>
+					<Text TextId="TID_FS005B_SE_FCS_SLS3_CONST_R" Value="SLS3: n_sls_r exceeded"/>
+					<Text TextId="TID_FS005B_SE_FCS_SLS3_CONST_R_HELP" Value="Drive Safety Function SLS3 error: Speed limit exceeded at constanct travel CW"/>
+					<Text TextId="TID_FS005C_SE_FCS_SLS0_CONST_L" Value="SLS0: n_sls_l exceeded"/>
+					<Text TextId="TID_FS005C_SE_FCS_SLS0_CONST_L_HELP" Value="Drive Safety Function SLS0 error: Speed limit exceeded at constanct travel CCW"/>
+					<Text TextId="TID_FS005D_SE_FCS_SLS1_CONST_L" Value="SLS1: n_sls_l exceeded"/>
+					<Text TextId="TID_FS005D_SE_FCS_SLS1_CONST_L_HELP" Value="Drive Safety Function SLS1 error: Speed limit exceeded at constanct travel CCW"/>
+					<Text TextId="TID_FS005E_SE_FCS_SLS2_CONST_L" Value="SLS2: n_sls_l exceeded"/>
+					<Text TextId="TID_FS005E_SE_FCS_SLS2_CONST_L_HELP" Value="Drive Safety Function SLS2 error: Speed limit exceeded at constanct travel CCW"/>
+					<Text TextId="TID_FS005F_SE_FCS_SLS3_CONST_L" Value="SLS3: n_sls_l exceeded"/>
+					<Text TextId="TID_FS005F_SE_FCS_SLS3_CONST_L_HELP" Value="Drive Safety Function SLS3 error: Speed limit exceeded at constanct travel CCW"/>
+					<Text TextId="TID_FS0060_SE_FCS_SLS0_RAMP_GEGEN" Value="n_sls0 exceeded opposite direction"/>
+					<Text TextId="TID_FS0060_SE_FCS_SLS0_RAMP_GEGEN_HELP" Value="Drive Safety Function SLS0 error: Limit speed exceeded in opposite direction during deceleration phase or ramp travel"/>
+					<Text TextId="TID_FS0061_SE_FCS_SLS1_RAMP_GEGEN" Value="n_sls1 exceeded opposite direction"/>
+					<Text TextId="TID_FS0061_SE_FCS_SLS1_RAMP_GEGEN_HELP" Value="Drive Safety Function SLS1 error: Limit speed exceeded in opposite direction during deceleration phase or ramp travel"/>
+					<Text TextId="TID_FS0062_SE_FCS_SLS2_RAMP_GEGEN" Value="n_sls2 exceeded opposite direction"/>
+					<Text TextId="TID_FS0062_SE_FCS_SLS2_RAMP_GEGEN_HELP" Value="Drive Safety Function SLS2 error: Limit speed exceeded in opposite direction during deceleration phase or ramp travel"/>
+					<Text TextId="TID_FS0063_SE_FCS_SLS3_RAMP_GEGEN" Value="n_sls3 exceeded opposite direction"/>
+					<Text TextId="TID_FS0063_SE_FCS_SLS3_RAMP_GEGEN_HELP" Value="Drive Safety Function SLS3 error: Limit speed exceeded in opposite direction during deceleration phase or ramp travel"/>
+					<Text TextId="TID_FS0064_SE_FCS_SS1A_N_MAX" Value="SS1A: n_max exceeded"/>
+					<Text TextId="TID_FS0064_SE_FCS_SS1A_N_MAX_HELP" Value="Drive Safety Function SS1A error: Maximum speed exceeded"/>
+					<Text TextId="TID_FS0065_SE_FCS_SS1A_RAMP" Value="SS1A: n_max exceeded during ramp"/>
+					<Text TextId="TID_FS0065_SE_FCS_SS1A_RAMP_HELP" Value="Drive Safety Function SS1A error: Speed limit exceeded during ramp travel"/>
+					<Text TextId="TID_FS0066_SE_FCS_SS1A_STANDSTILL" Value="SS1A: n_min exceeded at standstill"/>
+					<Text TextId="TID_FS0066_SE_FCS_SS1A_STANDSTILL_HELP" Value="Drive Safety Function SS1A error: Minimum standstill speed exceeded"/>
+					<Text TextId="TID_FS0067_SE_FCS_STO_BYPASSED" Value="STO: Disconnection bypassed"/>
+					<Text TextId="TID_FS0067_SE_FCS_STO_BYPASSED_HELP" Value="STO error Switch-off bypassed"/>
+					<Text TextId="TID_FS0068_SE_FCS_STO_NACHLAUF" Value="STO: Coasting time exceeded"/>
+					<Text TextId="TID_FS0068_SE_FCS_STO_NACHLAUF_HELP" Value="STO error Coasting time in test mode exceeded"/>
+					<Text TextId="TID_FS0070_SE_FCS_SDI0_DIR_R" Value="SDI0 fault: Clockwise direction of rotation"/>
+					<Text TextId="TID_FS0070_SE_FCS_SDI0_DIR_R_HELP" Value="Drive Safety Function SDI0 error: Blocked cw direction of rotation detected"/>
+					<Text TextId="TID_FS0071_SE_FCS_SDI1_DIR_R" Value="SDI1 fault: Clockwise direction of rotation"/>
+					<Text TextId="TID_FS0071_SE_FCS_SDI1_DIR_R_HELP" Value="Drive Safety Function SDI1 error: Blocked cw direction of rotation detected"/>
+					<Text TextId="TID_FS0072_SE_FCS_SDI2_DIR_R" Value="SDI2 fault: Clockwise direction of rotation"/>
+					<Text TextId="TID_FS0072_SE_FCS_SDI2_DIR_R_HELP" Value="Drive Safety Function SDI2 error: Blocked cw direction of rotation detected"/>
+					<Text TextId="TID_FS0073_SE_FCS_SDI3_DIR_R" Value="SDI3 fault: Clockwise direction of rotation"/>
+					<Text TextId="TID_FS0073_SE_FCS_SDI3_DIR_R_HELP" Value="Drive Safety Function SDI3 error: Blocked cw direction of rotation detected"/>
+					<Text TextId="TID_FS0074_SE_FCS_SDI0_DIR_L" Value="SDI0 fault: Counterclockwise direction of rotation"/>
+					<Text TextId="TID_FS0074_SE_FCS_SDI0_DIR_L_HELP" Value="Drive Safety Function SDI0 error: Blocked ccw direction of rotation detected"/>
+					<Text TextId="TID_FS0075_SE_FCS_SDI1_DIR_L" Value="SDI1 fault: Counterclockwise direction of rotation"/>
+					<Text TextId="TID_FS0075_SE_FCS_SDI1_DIR_L_HELP" Value="Drive Safety Function SDI1 error: Blocked ccw direction of rotation detected"/>
+					<Text TextId="TID_FS0076_SE_FCS_SDI2_DIR_L" Value="SDI2 fault: Counterclockwise direction of rotation"/>
+					<Text TextId="TID_FS0076_SE_FCS_SDI2_DIR_L_HELP" Value="Drive Safety Function SDI2 error: Blocked ccw direction of rotation detected"/>
+					<Text TextId="TID_FS0077_SE_FCS_SDI3_DIR_L" Value="SDI3 fault: Counterclockwise direction of rotation"/>
+					<Text TextId="TID_FS0077_SE_FCS_SDI3_DIR_L_HELP" Value="Drive Safety Function SDI3 error: Blocked ccw direction of rotation detected"/>
+					<Text TextId="TID_FS0080_SE_FCS_PARA_DATASET_UNPLAUSIBLE" Value="Parameter setting not plausible"/>
+					<Text TextId="TID_FS0080_SE_FCS_PARA_DATASET_UNPLAUSIBLE_HELP" Value="Implausible device parameter setting"/>
+					<Text TextId="TID_FS0081_SE_FCS_PARA_DATASET_CORRUPT" Value="Parameter setting corrupt"/>
+					<Text TextId="TID_FS0081_SE_FCS_PARA_DATASET_CORRUPT_HELP" Value="Corrupt device parameter setting"/>
+					<Text TextId="TID_FS0082_SE_FCS_PARA_DATASET_INCOMPATIBLE" Value="Parameter setting not compatible"/>
+					<Text TextId="TID_FS0082_SE_FCS_PARA_DATASET_INCOMPATIBLE_HELP" Value="Incompatible device parameter setting"/>
+					<Text TextId="TID_FS0083_SE_FCS_PARA_NO_DEVICE_CHANGE" Value="Unit replacement fault"/>
+					<Text TextId="TID_FS0083_SE_FCS_PARA_NO_DEVICE_CHANGE_HELP" Value="Automatic unit replacement is not supported without connection to PROFIsafe"/>
+					<Text TextId="TID_FS0084_SE_FCS_PARA_ABOX_EMPTY" Value="S12 parameter set missing in ABOX"/>
+					<Text TextId="TID_FS0084_SE_FCS_PARA_ABOX_EMPTY_HELP" Value="ABOX does not include S12 parameter set"/>
+					<Text TextId="TID_FS0085_SE_FCS_PARA_ABOX_STORE_ERROR" Value="Save error on ABOX"/>
+					<Text TextId="TID_FS0085_SE_FCS_PARA_ABOX_STORE_ERROR_HELP" Value="Unable to save parameter set to ABOX"/>
+					<Text TextId="TID_FS0086_SE_FCS_PARA_EEPROM_CORRUPT" Value="Internal parameter set corrupt"/>
+					<Text TextId="TID_FS0086_SE_FCS_PARA_EEPROM_CORRUPT_HELP" Value="Internal EEPROM parameter set corrupt"/>
+					<Text TextId="TID_FS0087_SE_FCS_PARA_EBOX_COM_ERROR" Value="Control card communication error"/>
+					<Text TextId="TID_FS0087_SE_FCS_PARA_EBOX_COM_ERROR_HELP" Value="Error while communicating with the control board at startup"/>
+					<Text TextId="TID_FS0088_SE_FCS_PARA_APPR_STORE_ERROR" Value="Error saving verification"/>
+					<Text TextId="TID_FS0088_SE_FCS_PARA_APPR_STORE_ERROR_HELP" Value="Unable to save verified data to ABOX"/>
+					<Text TextId="TID_FS0090_SE_FCS_ENC_ENCODER_ERROR" Value="Encoder signal monitoring error"/>
+					<Text TextId="TID_FS0090_SE_FCS_ENC_ENCODER_ERROR_HELP" Value="Encoder signal monitoring has signaled error"/>
+					<Text TextId="TID_FS0091_SE_FCS_ENC_ENCODER_SUPP_ERROR" Value="Encoder level monitoring error"/>
+					<Text TextId="TID_FS0091_SE_FCS_ENC_ENCODER_SUPP_ERROR_HELP" Value="Monitoring of levels of encoder track signals has signaled error"/>
+					<Text TextId="TID_FS0092_SE_FCS_ENC_ENCODER_SPEED_EXCEED" Value="Maximum speed error"/>
+					<Text TextId="TID_FS0092_SE_FCS_ENC_ENCODER_SPEED_EXCEED_HELP" Value="Determined encoder speed has exceeded maximum value"/>
+					<Text TextId="TID_FS0093_SE_FCS_ENC_ENCODER_SIGNAL_BAD" Value="Faulty track signals"/>
+					<Text TextId="TID_FS0093_SE_FCS_ENC_ENCODER_SIGNAL_BAD_HELP" Value="Too much interference of encoder signals"/>
+					<Text TextId="TID_FS1040_SE_FCS_HWDIAG_TEMPERATUR_ZUHOCH" Value="Ambient temperature too high"/>
+					<Text TextId="TID_FS1040_SE_FCS_HWDIAG_TEMPERATUR_ZUHOCH_HELP" Value="HWDIAG error: Temperature"/>
+					<Text TextId="TID_FS1041_SE_FCS_HWDIAG_TEMPERATUR_ZUNIEDRIG" Value="Ambient temperature too low"/>
+					<Text TextId="TID_FS1041_SE_FCS_HWDIAG_TEMPERATUR_ZUNIEDRIG_HELP" Value="HWDIAG error: Temperature"/>
+					<Text TextId="TID_FS1042_SE_FCS_HWDIAG_U24V_ZUHOCH" Value="Supply voltage too high"/>
+					<Text TextId="TID_FS1042_SE_FCS_HWDIAG_U24V_ZUHOCH_HELP" Value="HWDIAG error: 24 V voltage supply too high"/>
+					<Text TextId="TID_FS1043_SE_FCS_HWDIAG_U24V_ZUNIEDRIG" Value="Supply voltage too low"/>
+					<Text TextId="TID_FS1043_SE_FCS_HWDIAG_U24V_ZUNIEDRIG_HELP" Value="HWDIAG error: 24 V voltage supply too low"/>
+					<Text TextId="TID_FS2000_SE_FCS_SP_SETPRM" Value="DSO status error when receiving FPAR"/>
+					<Text TextId="TID_FS2000_SE_FCS_SP_SETPRM_HELP" Value="SP error: SetPrm process ? DSO not in a valid state"/>
+					<Text TextId="TID_FS2001_SE_FCS_SP_SETPRM_SPD_STATE" Value="Error applying FPAR to DSO"/>
+					<Text TextId="TID_FS2001_SE_FCS_SP_SETPRM_SPD_STATE_HELP" Value="SP error: SetPrm process ? Acceptance of FPar failed"/>
+					<Text TextId="TID_FS2002_SE_FCS_SP_CHCFG" Value="Faulty process data length"/>
+					<Text TextId="TID_FS2002_SE_FCS_SP_CHCFG_HELP" Value="SP error: Check Config process ? Faulty process data length of PO PI data"/>
+					<Text TextId="TID_FS2003_SE_FCS_SP_CHCFG_SPD" Value="CRC2 configuration error"/>
+					<Text TextId="TID_FS2003_SE_FCS_SP_CHCFG_SPD_HELP" Value="SP error: Check Config process ? Configuration in SPD failed, invalid CRC length"/>
+					<Text TextId="TID_FS2004_SE_FCS_SP_CHCFG_SPD_RET_ERR" Value="Error in configuration process"/>
+					<Text TextId="TID_FS2004_SE_FCS_SP_CHCFG_SPD_RET_ERR_HELP" Value="SP error: Check Config process ? Invalid return when configuring SPD"/>
+					<Text TextId="TID_FS2005_SE_FCS_SP_SETPRM_CHCFG_SEQ" Value="DSO status error when receiving CheckCfg"/>
+					<Text TextId="TID_FS2005_SE_FCS_SP_SETPRM_CHCFG_SEQ_HELP" Value="SP error: SetPrm Check Config process"/>
+					<Text TextId="TID_FS2006_SE_FCS_SP_SPD" Value="Error in SPD"/>
+					<Text TextId="TID_FS2006_SE_FCS_SP_SPD_HELP" Value="SP error: Error in safety protocol driver"/>
+					<Text TextId="TID_FS2007_SE_FCS_SP_ZYK_DATA_COM" Value="Error in the communication"/>
+					<Text TextId="TID_FS2007_SE_FCS_SP_ZYK_DATA_COM_HELP" Value="SP error: Cyclic data exchange error"/>
+					<Text TextId="TID_FS2008_SE_FCS_SP_ZYK_DATA_WD" Value="Safety protocol timeout"/>
+					<Text TextId="TID_FS2008_SE_FCS_SP_ZYK_DATA_WD_HELP" Value="SP error: Timeout detected, cyclic data exchange error"/>
+					<Text TextId="TID_FS2009_SE_FCS_SP_ZYK_DATA_PAS" Value="Safe process data set"/>
+					<Text TextId="TID_FS2009_SE_FCS_SP_ZYK_DATA_PAS_HELP" Value="SP error: Error in cyclic data exchange of process data and in safe state"/>
+					<Text TextId="TID_FS200A_SE_FCS_SP_ZYK_DATA_CLR" Value="SP zero message received"/>
+					<Text TextId="TID_FS200A_SE_FCS_SP_ZYK_DATA_CLR_HELP" Value="SP error: Error in cyclic data exchange, zero telegram was received"/>
+					<Text TextId="TID_FPS8040_SE_FCS_SP_ERRFPAR_01" Value="Mismatch of F_Dest_Add"/>
+					<Text TextId="TID_FPS8040_SE_FCS_SP_ERRFPAR_01_HELP" Value="FPar parameterization error: Mismatch of safety destination address"/>
+					<Text TextId="TID_FPS8041_SE_FCS_SP_ERRFPAR_02" Value="F_Dest_Add not valid"/>
+					<Text TextId="TID_FPS8041_SE_FCS_SP_ERRFPAR_02_HELP" Value="FPar parameterization error: Safety destination address not valid"/>
+					<Text TextId="TID_FPS8042_SE_FCS_SP_ERRFPAR_03" Value="F_Source_Add not valid"/>
+					<Text TextId="TID_FPS8042_SE_FCS_SP_ERRFPAR_03_HELP" Value="FPar parameterization error: Safety source address not valid"/>
+					<Text TextId="TID_FPS8043_SE_FCS_SP_ERRFPAR_04" Value="F_WD_Time is 0 ms"/>
+					<Text TextId="TID_FPS8043_SE_FCS_SP_ERRFPAR_04_HELP" Value="FPar parameterization error: Safety watchdog time value is 0 ms"/>
+					<Text TextId="TID_FPS8044_SE_FCS_SP_ERRFPAR_05" Value="F_SIL exceeds SIL f. application"/>
+					<Text TextId="TID_FPS8044_SE_FCS_SP_ERRFPAR_05_HELP" Value="FPar parameterization error: Parameter F_SIL exceeds"/>
+					<Text TextId="TID_FPS8045_SE_FCS_SP_ERRFPAR_06" Value="F_CRC_Length does not match"/>
+					<Text TextId="TID_FPS8045_SE_FCS_SP_ERRFPAR_06_HELP" Value="FPar parameterization error: Parameter F_CRC_Length not valid"/>
+					<Text TextId="TID_FPS8046_SE_FCS_SP_ERRFPAR_07" Value="F-parameter set incorrectly"/>
+					<Text TextId="TID_FPS8046_SE_FCS_SP_ERRFPAR_07_HELP" Value="FPar parameterization error: Version of F Parameter Set incorrect"/>
+					<Text TextId="TID_FPS8047_SE_FCS_SP_ERRFPAR_08" Value="Inconsistent FPar CRC1 fault"/>
+					<Text TextId="TID_FPS8047_SE_FCS_SP_ERRFPAR_08_HELP" Value="FPar parameterization error: Data inconsistent in received F-parameter block"/>
+					<Text TextId="TID_FPS8048_SE_FCS_SP_ERRFPAR_09" Value="Device information, see manual"/>
+					<Text TextId="TID_FPS8048_SE_FCS_SP_ERRFPAR_09_HELP" Value="FPar parameterization error: Device specific diagnosis"/>
+					<Text TextId="TID_FPS8049_SE_FCS_SP_ERRFPAR_10" Value="Save iParameter WDT exceeded"/>
+					<Text TextId="TID_FPS8049_SE_FCS_SP_ERRFPAR_10_HELP" Value="FPar parameterization error: Save iParameter watchdog time exceeded"/>
+					<Text TextId="TID_FPS804A_SE_FCS_SP_ERRFPAR_11" Value="Restore iParameter WDT exceeded"/>
+					<Text TextId="TID_FPS804A_SE_FCS_SP_ERRFPAR_11_HELP" Value="FPar parameterization error: Restore iParameter watchdog time exceeded"/>
+					<Text TextId="TID_FPS804B_SE_FCS_SP_ERRFPAR_12" Value="Inconsistent iParameter iParCRC"/>
+					<Text TextId="TID_FPS804B_SE_FCS_SP_ERRFPAR_12_HELP" Value="FPar parameterization error: Inconsistent IParameters (iParError)"/>
+					<Text TextId="TID_FPS804C_SE_FCS_SP_ERRFPAR_13" Value="F_Block_ID not supported"/>
+					<Text TextId="TID_FPS804C_SE_FCS_SP_ERRFPAR_13_HELP" Value="FPar parameterization error: F_BlockID not supported"/>
+					<Text TextId="TID_FPS804D_SE_FCS_SP_ERRFPAR_14" Value="Transmission error: CRC2 error"/>
+					<Text TextId="TID_FPS804D_SE_FCS_SP_ERRFPAR_14_HELP" Value="FPar parameterization error: Transmission error: data inconsistent"/>
+					<Text TextId="TID_FPS804E_SE_FCS_SP_ERRFPAR_15" Value="Transmission error: WDT elapsed"/>
+					<Text TextId="TID_FPS804E_SE_FCS_SP_ERRFPAR_15_HELP" Value="FPar parameterization error: Transmission error: timeout"/>
+					<Text TextId="TID_FPS804F_SE_FCS_SP_ERRFPAR_16" Value="Reserved for further use"/>
+					<Text TextId="TID_FPS804F_SE_FCS_SP_ERRFPAR_16_HELP" Value="FPar parameterization error: Reserved do not use numbers, do not evaluate numbers"/>
+					<!--AUTO_MERGE_TAG_END_EXTERNALTEXT_EN-->
+				</PrimaryLanguage>
+				<Language xml:lang="de">
+					<Text TextId="MFE" Value="MFE"/>
+					<Text TextId="MFE Classic" Value="MFE V1.0 ALT"/>
+					<Text TextId="MFE Classic PDEV" Value="MFE V1.0"/>
+					<Text TextId="MFE Classic PDEV MRP" Value="MFE V1.1"/>
+					<Text TextId="MFE Classic PDEV MRP 3MM" Value="MFE V1.2 3xMOVIMOT"/>
+					<Text TextId="MFE Classic mit PROFINET IO" Value="Dezentrales Antriebssystem MOVIMOT mit PROFINET IO"/>
+					<Text TextId="MFE Classic mit PROFINET IO PDEV" Value="Dezentrales Antriebssystem MOVIMOT mit PROFINET IO incl. Topologieerkennung"/>
+					<Text TextId="MFE Classic mit PROFINET IO PDEV MRP" Value="Dezentrales Antriebssystem MOVIMOT mit PROFINET IO incl. Topologieerkennung und MRP Medienredundanzfähigkeit"/>
+					<Text TextId="MFE Classic mit PROFINET IO PDEV MRP 3MM" Value="Dezentrales Antriebssystem MOVIMOT mit PROFINET IO incl. Topologieerkennung und MRP Medienredundanzfähigkeit für 3 MOVIMOT"/>
+					<Text TextId="PDEV_Interface" Value="X1"/>
+					<Text TextId="PDEV_Port1" Value="P1"/>
+					<Text TextId="PDEV_Port2" Value="P2"/>
+					<Text TextId="T_DAP_InterfaceModule" Value="Ethernet Interface"/>
+					<Text TextId="T_Port1" Value="Port 1 - RJ45 (X11)"/>
+					<Text TextId="T_Port2" Value="Port 2 - RJ45 (X12)"/>
+					<Text TextId="Leermodul" Value="Leerplatz"/>
+					<Text TextId="Info Leermodul" Value="Leerplatz, kein Modul gesteckt"/>
+					<Text TextId="Status Movifit" Value="MFE Status"/>
+					<Text TextId="Info Status Movifit" Value="MFE Status"/>
+					<Text TextId="Statusword" Value="Statuswort"/>
+					<Text TextId="4 6 DI" Value="4/6 DI"/>
+					<Text TextId="Info 4 6 DI" Value="4/6 Digitale Eingänge"/>
+					<Text TextId="2 DO" Value="2 DO"/>
+					<Text TextId="Info 2 DO" Value="2 Digitale Ausgänge"/>
+					<Text TextId="MM 2PD" Value="MOVIMOT 2PD"/>
+					<Text TextId="MM 3PD" Value="MOVIMOT 3PD"/>
+					<Text TextId="Info MM 2PD" Value="MOVIMOT mit 2 Prozessdatenworten"/>
+					<Text TextId="Info MM 3PD" Value="MOVIMOT mit 3 Prozessdatenworten"/>
+					<Text TextId="Slot not used" Value="Leerplatz"/>
+					<Text TextId="Profinet IO Anschaltung" Value="MFE"/>
+					<Text TextId="Safety Module" Value="Slot1: Reserviert"/>
+					<Text TextId="MFT Status" Value="Slot2: MFE Status"/>
+					<Text TextId="DI Module" Value="Slot3: Digitale Eingänge"/>
+					<Text TextId="DO Module" Value="Slot4: Digitale Ausgänge"/>
+					<Text TextId="Movimot" Value="Slot5-7: Movimot"/>
+					<Text TextId="2 PD" Value="02 Prozessdatenworte"/>
+					<Text TextId="3 PD" Value="03 Prozessdatenworte"/>
+					<Text TextId="Info 2PD" Value="02 Prozessdatenworte für PLC"/>
+					<Text TextId="Info 3PD" Value="03 Prozessdatenworte für PLC"/>
+					<Text TextId="PI0" Value="Prozesseingangsdatenwort 0"/>
+					<Text TextId="PI1" Value="Prozesseingangsdatenwort 1"/>
+					<Text TextId="PI2" Value="Prozesseingangsdatenwort 2"/>
+					<Text TextId="PO0" Value="Prozessausgangsdatenwort 0"/>
+					<Text TextId="PO1" Value="Prozessausgangsdatenwort 1"/>
+					<Text TextId="PO2" Value="Prozessausgangsdatenwort 2"/>
+					<Text TextId="Alarmeinstellung DAP" Value="Alarmeinstellungen (Kopf)"/>
+					<Text TextId="Alarmeinstellung SLOT" Value="Alarmeinstellungen (Steckplatz)"/>
+					<Text TextId="ID_DiagAlarmEnabling" Value="Diagnose - Alarme aktivieren"/>
+					<Text TextId="ID_DiagAlarmPort1" Value="Diagnose - Alarm Port 1 aktivieren (X11)"/>
+					<Text TextId="ID_DiagAlarmPort2" Value="Diagnose - Alarm Port 2 aktivieren (X12)"/>
+					<Text TextId="ID_BdDxAlarmPort1" Value="Baudrate/Duplex - Alarm Port 1 aktivieren (X11)"/>
+					<Text TextId="ID_BdDxAlarmPort2" Value="Baudrate/Duplex - Alarm Port 2 aktivieren (X12)"/>
+					<Text TextId="On" Value="Ein"/>
+					<Text TextId="Off" Value="Aus"/>
+					<Text TextId="Keine Überwachung" Value="Keine Überwachung"/>
+					<Text TextId="Baudrate 10MBit oder Halbduplex - Mode erzeugt kommenden Alarm" Value="Baudrate 10MBit oder Halbduplex - Mode erzeugt kommenden Alarm"/>
+					<Text TextId="Link Down erzeugt kommenden Alarm" Value="Link Down erzeugt kommenden Alarm"/>
+					<!--ACHTUNG: Der Nachfolgende Block wird automatisch erzeugt, bitte das Tag nicht verschieben!!! - Hilfetexte innerhalb des Blocks können geändert werden, diese werden beim mergen automatisch mit übernommen, falls es Fehlercodes zu dem Fehlertext gibt-->
+					<!--AUTO_MERGE_TAG_START_EXTERNALTEXT_GER-->
+					<!--***********************************-->
+					<!-- GsdmlBuilder(Auto): GSDML-TagGER-->
+					<!--***********************************-->
+					<Text TextId="F25 EEPROM" Value="F25 EEPROM"/>
+					<Text TextId="FS7x Res Hilfetext" Value="Reserviert"/>
+					<Text TextId="F28 Feldbus Timeout" Value="F28 Feldbus Timeout"/>
+					<Text TextId="F28 Feldbus Timeout Hilfetext" Value="Mögliche Ursache(n): Es hat innerhalb der projektierten Ansprechüberwachung kein Datenaustausch zwischen Master und Slave stattgefunden."/>
+					<Text TextId="F37 System-Watchdog" Value="F37 System-Watchdog"/>
+					<Text TextId="F37 System-Watchdog Hilfetext" Value="Mögliche Ursache(n): Fehler im Ablauf der Systemsoftware, SEW Service zu Rate ziehen."/>
+					<Text TextId="F38 System-Software" Value="F38 System-Software"/>
+					<Text TextId="F38 System-Software Hilfetext" Value="Mögliche Ursache(n): Hardware gestört oder defekt."/>
+					<Text TextId="F45 Initialisierung" Value="F45 Initialisierung"/>
+					<Text TextId="F45 Initialisierung Hilfetext" Value="Mögliche Ursache(n): Hardware gestört oder defekt. "/>
+					<Text TextId="F98 CRC Error Flash" Value="F98 CRC Error Flash"/>
+					<Text TextId="F98 CRC Error Flash Hilfetext" Value="Mögliche Ursache(n): Interner Gerätefehler, Flashspeicher defekt."/>
+					<Text TextId="F111 Komm Timeout Tn" Value="F111 Timeout Subsystem"/>
+					<Text TextId="F111 Komm Timeout Tn Hilfetext" Value="Mögliche Ursache: Kommunikationsverbindung zwischen Movifit und Umrichter z.B. Movimot gestört"/>
+					<Text TextId="F112 Peripheriefehler" Value="F112 Peripheriefehler"/>
+					<Text TextId="F112 Peripheriefehler Hilfetext" Value="Mögliche Ursache: z.B. Wartungsschalter aus. Analysieren Sie das Movifit Statuswort."/>
+					<Text TextId="F121 Automatischer Gerätetausch" Value="F121 Automatischer Gerätetausch"/>
+					<Text TextId="F121 Automatischer Gerätetausch Hilfetext" Value="Mögliche Ursache: z.B. EasyMode aktiviert."/>
+					<Text TextId="F126 Fehler LWL-Konverter" Value="Fehler LWL-Konverter "/>
+					<Text TextId="F126 Fehler LWL-Konverter Hilfetext" Value="Fehler beim Aktualisieren der LWL-Diagnosewerte"/>
+					<Text TextId="Switch Port 1 Down" Value="Switch Port 1 (X11) Link Down"/>
+					<Text TextId="Switch Port 1 Down Hilfetext" Value="Prüfen Sie das Ethernet Kabel."/>
+					<Text TextId="Switch Port 2 Down" Value="Switch Port 2 (X12) Link Down"/>
+					<Text TextId="Switch Port 2 Down Hilfetext" Value="Prüfen Sie das Ethernet Kabel."/>
+					<Text TextId="FS5 Fehler Lastspannungsversorgung" Value="Fehler Lastspannungsversorgung"/>
+					<Text TextId="FS5 Fehler Lastspannungsversorgung Hilfetext" Value="Prüfen Sie die Lastspannungs - Versorgung der Safety - Elektronik"/>
+					<Text TextId="FS6 Versionskonflikt" Value="Versionskonflikt Safety Option"/>
+					<Text TextId="FS6 Versionskonflikt Hilfetext" Value="Safety Option tauschen"/>
+					<Text TextId="FS7 Profisafe Adresse" Value="Profisafe Adresse nicht vergeben"/>
+					<Text TextId="FS7 Profisafe Adresse Hilfetext" Value="Stellen Sie eine gültige Profisafe Adresse ein."/>
+					<Text TextId="FSX F Option Para" Value="F Init Fehler"/>
+					<Text TextId="FSX F Option Para Hilfetext" Value="Stellen Sie eine gültige F Destination Adresse ein"/>
+					<Text TextId="TID_FS0000_SE_SAFETY_OPTION_ERROR" Value="Fehler Safety Option"/>
+					<Text TextId="TID_FS0000_SE_SAFETY_OPTION_ERROR_HELP" Value="Warning"/>
+					<Text TextId="TID_FS0001_SE_SAFETY_ERR_FATAL_FAULT" Value="Fataler Fehler"/>
+					<Text TextId="TID_FS0001_SE_SAFETY_ERR_FATAL_FAULT_HELP" Value="Interner Ablauffehler. 24-V-Spannung aus- und wieder einschalten."/>
+					<Text TextId="TID_FS0002_SE_SAFETY_ERR_SYS_FAULT" Value="System Fehler"/>
+					<Text TextId="TID_FS0002_SE_SAFETY_ERR_SYS_FAULT_HELP" Value="Interner Ablauffehler. 24-V-Spannung aus- und wieder einschalten."/>
+					<Text TextId="TID_FS0003_SE_SAFETY_ERR_FCOM" Value="Fehler im F-Datenaustausch"/>
+					<Text TextId="TID_FS0003_SE_SAFETY_ERR_FCOM_HELP" Value="Fehler im Verbindungsaufbau oder in der zyklischen Kommunikation. Projektierung pruefen und Option wieder eingliedern."/>
+					<Text TextId="TID_FS0004_SE_SAFETY_ERR_PSP_FAULT" Value="Fehler in der PSP Versorgung"/>
+					<Text TextId="TID_FS0004_SE_SAFETY_ERR_PSP_FAULT_HELP" Value="Überprüfung der Installation. 24-V-Spannung aus- und wieder einschalten."/>
+					<Text TextId="TID_FS0008_SE_FCS_IN_EEPROM" Value="Fehler Ext Speicher DSO"/>
+					<Text TextId="TID_FS0008_SE_FCS_IN_EEPROM_HELP" Value="EEPROM defekt"/>
+					<Text TextId="TID_FS0014_SE_SAFETY_ERR_SYS_FDI_FAULT" Value="HW-Diagnose: Fehler DI Intern"/>
+					<Text TextId="TID_FS0014_SE_SAFETY_ERR_SYS_FDI_FAULT_HELP" Value="Fehler DI durch einen internen Test der Eingangskanaele auf der Sicherheitsbaugruppe festgestellt."/>
+					<Text TextId="TID_FS0015_SE_SAFETY_ERR_SHORT_CIRCUIT_FDI_FAULT" Value="HW-Diagnose: Kurzschluss F-DI"/>
+					<Text TextId="TID_FS0015_SE_SAFETY_ERR_SHORT_CIRCUIT_FDI_FAULT_HELP" Value="Externe Verdrahtung pruefen"/>
+					<Text TextId="TID_FS0016_SE_FCS_FDI_DISK_0_1" Value="Diskrepanzfehler F-DI0/1"/>
+					<Text TextId="TID_FS0016_SE_FCS_FDI_DISK_0_1_HELP" Value="DI-Fehler Diskrepanz F-DI0/1"/>
+					<Text TextId="TID_FS0018_SE_FCS_FDI_DISK_2_3" Value="Diskrepanzfehler F-DI2/3"/>
+					<Text TextId="TID_FS0018_SE_FCS_FDI_DISK_2_3_HELP" Value="DI-Fehler Diskrepanz F-DI2/3"/>
+					<Text TextId="TID_FS001A_SE_FCS_FDI_DISK_4_5" Value="Diskrepanzfehler F-DI4/5"/>
+					<Text TextId="TID_FS001A_SE_FCS_FDI_DISK_4_5_HELP" Value="DI-Fehler Diskrepanz F-DI4/5"/>
+					<Text TextId="TID_FS001C_SE_FCS_FDI_DISK_6_7" Value="Diskrepanzfehler F-DI6/7"/>
+					<Text TextId="TID_FS001C_SE_FCS_FDI_DISK_6_7_HELP" Value="DI-Fehler Diskrepanz F-DI6/7"/>
+					<Text TextId="TID_FS0020_SE_FCS_FDI_INT_0" Value="Querschluss F-DI0"/>
+					<Text TextId="TID_FS0020_SE_FCS_FDI_INT_0_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI0"/>
+					<Text TextId="TID_FS0021_SE_FCS_FDI_INT_1" Value="Querschluss F-DI1"/>
+					<Text TextId="TID_FS0021_SE_FCS_FDI_INT_1_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI1"/>
+					<Text TextId="TID_FS0022_SE_FCS_FDI_INT_2" Value="Querschluss F-DI2"/>
+					<Text TextId="TID_FS0022_SE_FCS_FDI_INT_2_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI2"/>
+					<Text TextId="TID_FS0023_SE_FCS_FDI_INT_3" Value="Querschluss F-DI3"/>
+					<Text TextId="TID_FS0023_SE_FCS_FDI_INT_3_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI3"/>
+					<Text TextId="TID_FS0024_SE_FCS_FDI_INT_4" Value="Querschluss F-DI4"/>
+					<Text TextId="TID_FS0024_SE_FCS_FDI_INT_4_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI4"/>
+					<Text TextId="TID_FS0025_SE_FCS_FDI_INT_5" Value="Querschluss F-DI5"/>
+					<Text TextId="TID_FS0025_SE_FCS_FDI_INT_5_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI5"/>
+					<Text TextId="TID_FS0026_SE_FCS_FDI_INT_6" Value="Querschluss F-DI6"/>
+					<Text TextId="TID_FS0026_SE_FCS_FDI_INT_6_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI6"/>
+					<Text TextId="TID_FS0027_SE_FCS_FDI_INT_7" Value="Querschluss F-DI7"/>
+					<Text TextId="TID_FS0027_SE_FCS_FDI_INT_7_HELP" Value="DI-Fehler Querschluss oder Plausibilitaetskontrolle F-DI7"/>
+					<Text TextId="TID_FS0028_SE_FCS_FDI_INT_8" Value="Beschaltungsfehler F-DI0"/>
+					<Text TextId="TID_FS0028_SE_FCS_FDI_INT_8_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI0"/>
+					<Text TextId="TID_FS0029_SE_FCS_FDI_INT_9" Value="Beschaltungsfehler F-DI1"/>
+					<Text TextId="TID_FS0029_SE_FCS_FDI_INT_9_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI1"/>
+					<Text TextId="TID_FS002A_SE_FCS_FDI_INT_A" Value="Beschaltungsfehler F-DI2"/>
+					<Text TextId="TID_FS002A_SE_FCS_FDI_INT_A_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI2"/>
+					<Text TextId="TID_FS002B_SE_FCS_FDI_INT_B" Value="Beschaltungsfehler F-DI3"/>
+					<Text TextId="TID_FS002B_SE_FCS_FDI_INT_B_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI3"/>
+					<Text TextId="TID_FS002C_SE_FCS_FDI_INT_C" Value="Beschaltungsfehler F-DI4"/>
+					<Text TextId="TID_FS002C_SE_FCS_FDI_INT_C_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI4"/>
+					<Text TextId="TID_FS002D_SE_FCS_FDI_INT_D" Value="Beschaltungsfehler F-DI5"/>
+					<Text TextId="TID_FS002D_SE_FCS_FDI_INT_D_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI5"/>
+					<Text TextId="TID_FS002E_SE_FCS_FDI_INT_E" Value="Beschaltungsfehler F-DI6"/>
+					<Text TextId="TID_FS002E_SE_FCS_FDI_INT_E_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI6"/>
+					<Text TextId="TID_FS002F_SE_FCS_FDI_INT_F" Value="Beschaltungsfehler F-DI7"/>
+					<Text TextId="TID_FS002F_SE_FCS_FDI_INT_F_HELP" Value="DI-Fehler Maximale Reaktionszeit ueberschritten F-DI7"/>
+					<Text TextId="TID_FS0032_SE_SAFETY_ERR_SYS_FDO_FAULT" Value="HW-Diagnose: Fehler DO Intern"/>
+					<Text TextId="TID_FS0032_SE_SAFETY_ERR_SYS_FDO_FAULT_HELP" Value="Fehler DO durch einen internen Test der Ausgangskanaele auf der Sicherheitsbaugruppe festgestellt."/>
+					<Text TextId="TID_FS0033_SE_SAFETY_ERR_SHORT_CIRCUIT_FDO_FAULT" Value="HW-Diagnose: Kurzschluss F-DO"/>
+					<Text TextId="TID_FS0033_SE_SAFETY_ERR_SHORT_CIRCUIT_FDO_FAULT_HELP" Value="Externe Verdrahtung pruefen"/>
+					<Text TextId="TID_FS0034_SE_SAFETY_ERR_OVERLOAD_FDO_FAULT" Value="Fehler F-DO Überstrom"/>
+					<Text TextId="TID_FS0034_SE_SAFETY_ERR_OVERLOAD_FDO_FAULT_HELP" Value="Fehler Ueberlast F-DO - Summenstrom aller Ausgaenge zu gross"/>
+					<Text TextId="TID_FS0035_SE_FCS_DOS_STATUS_PM_ZWEIG_FAULT" Value="Fehler DO STO: Querschluss"/>
+					<Text TextId="TID_FS0035_SE_FCS_DOS_STATUS_PM_ZWEIG_FAULT_HELP" Value="Fehler DO STO - Statusvergleich im P-Zweig oder M-Zweig fehlgeschlagen"/>
+					<Text TextId="TID_FS0036_SE_FCS_DOS_IMESS_PM_ZWEIG_FAULT" Value="Fehler DO STO: Ueberstrom"/>
+					<Text TextId="TID_FS0036_SE_FCS_DOS_IMESS_PM_ZWEIG_FAULT_HELP" Value="Fehler DO STO - Stromgrenze im P-Zweig oder M-Zweig ueberschritten"/>
+					<Text TextId="TID_FS0037_SE_FCS_DOS_UMESS_MZWEIG_FAULT" Value="Fehler DO STO: Ueberspannung"/>
+					<Text TextId="TID_FS0037_SE_FCS_DOS_UMESS_MZWEIG_FAULT_HELP" Value="Fehler DO STO - Spannungsmessung im M-Zweig, Grenzwert wurde ueberschritten"/>
+					<Text TextId="TID_FS0038_SE_FCS_DOS_INT_DO_HW_FAULT" Value="Fehler DO STO: Int Messfehler"/>
+					<Text TextId="TID_FS0038_SE_FCS_DOS_INT_DO_HW_FAULT_HELP" Value="Fehler DO STO - Intern HW Strom Spannung Messung"/>
+					<Text TextId="TID_FS0039_SE_FCS_DO0_STATUS_PM_ZWEIG_FAULT" Value="Fehler DO 0: Querschluss"/>
+					<Text TextId="TID_FS0039_SE_FCS_DO0_STATUS_PM_ZWEIG_FAULT_HELP" Value="Fehler DO 0 - Statusvergleich im P-Zweig oder M-Zweig fehlgeschlagen"/>
+					<Text TextId="TID_FS003A_SE_FCS_DO0_IMESS_PM_ZWEIG_FAULT" Value="Fehler DO 0: Ueberstrom"/>
+					<Text TextId="TID_FS003A_SE_FCS_DO0_IMESS_PM_ZWEIG_FAULT_HELP" Value="Fehler DO 0 - Stromgrenze im P-Zweig oder M-Zweig ueberschritten"/>
+					<Text TextId="TID_FS003B_SE_FCS_DO0_UMESS_MZWEIG_FAULT" Value="Fehler DO 0: Ueberspannung"/>
+					<Text TextId="TID_FS003B_SE_FCS_DO0_UMESS_MZWEIG_FAULT_HELP" Value="Fehler DO 0 - Spannungsmessung im M-Zweig, Grenzwert wurde ueberschritten"/>
+					<Text TextId="TID_FS003C_SE_FCS_DO0_INT_DO_HW_FAULT" Value="Fehler DO 0: Int Messfehler"/>
+					<Text TextId="TID_FS003C_SE_FCS_DO0_INT_DO_HW_FAULT_HELP" Value="Fehler DO 0 - Intern HW Strom Spannung Messung"/>
+					<Text TextId="TID_FS003D_SE_FCS_DO1_STATUS_PM_ZWEIG_FAULT" Value="Fehler DO 1: Querschluss"/>
+					<Text TextId="TID_FS003D_SE_FCS_DO1_STATUS_PM_ZWEIG_FAULT_HELP" Value="Fehler DO 1 - Statusvergleich im P-Zweig oder M-Zweig fehlgeschlagen"/>
+					<Text TextId="TID_FS003E_SE_FCS_DO1_IMESS_PM_ZWEIG_FAULT" Value="Fehler DO 1: Ueberstrom"/>
+					<Text TextId="TID_FS003E_SE_FCS_DO1_IMESS_PM_ZWEIG_FAULT_HELP" Value="Fehler DO 1 - Stromgrenze im P-Zweig oder M-Zweig ueberschritten"/>
+					<Text TextId="TID_FS003F_SE_FCS_DO1_UMESS_MZWEIG_FAULT" Value="Fehler DO 1: Ueberspannung"/>
+					<Text TextId="TID_FS003F_SE_FCS_DO1_UMESS_MZWEIG_FAULT_HELP" Value="Fehler DO 1 - Spannungsmessung im M-Zweig, Grenzwert wurde ueberschritten"/>
+					<Text TextId="TID_FS0040_SE_FCS_DO1_INT_DO_HW_FAULT" Value="Fehler DO 1: Int Messfehler"/>
+					<Text TextId="TID_FS0040_SE_FCS_DO1_INT_DO_HW_FAULT_HELP" Value="Fehler DO 1 - Intern HW Strom Spannung Messung"/>
+					<Text TextId="TID_FS0041_SE_FCS_DOS_DRAHTBRUCH" Value="Fehler DO STO: Drahtbruch"/>
+					<Text TextId="TID_FS0041_SE_FCS_DOS_DRAHTBRUCH_HELP" Value="Fehler DO STO - Drahtbruch wurde erkannt"/>
+					<Text TextId="TID_FS0042_SE_FCS_DO0_DRAHTBRUCH" Value="Fehler DO 0: Drahtbruch"/>
+					<Text TextId="TID_FS0042_SE_FCS_DO0_DRAHTBRUCH_HELP" Value="Fehler DO 0 - Drahtbruch wurde erkannt"/>
+					<Text TextId="TID_FS0043_SE_FCS_DO1_DRAHTBRUCH" Value="Fehler DO 1: Drahtbruch"/>
+					<Text TextId="TID_FS0043_SE_FCS_DO1_DRAHTBRUCH_HELP" Value="Fehler DO 1 - Drahtbruch wurde erkannt"/>
+					<Text TextId="TID_FS0050_SE_FCS_SLS0_N_MAX" Value="SLS0: Ueberschreitung n_max"/>
+					<Text TextId="TID_FS0050_SE_FCS_SLS0_N_MAX_HELP" Value="Fehler ASF SLS0: Ueberschreitung n_max Startdrehrichtung waehrend Verzoegerungsphase"/>
+					<Text TextId="TID_FS0051_SE_FCS_SLS1_N_MAX" Value="SLS1: Ueberschreitung n_max"/>
+					<Text TextId="TID_FS0051_SE_FCS_SLS1_N_MAX_HELP" Value="Fehler ASF SLS1: Ueberschreitung n_max Startdrehrichtung waehrend Verzoegerungsphase"/>
+					<Text TextId="TID_FS0052_SE_FCS_SLS2_N_MAX" Value="SLS2: Ueberschreitung n_max"/>
+					<Text TextId="TID_FS0052_SE_FCS_SLS2_N_MAX_HELP" Value="Fehler ASF SLS2: Ueberschreitung n_max Startdrehrichtung waehrend Verzoegerungsphase"/>
+					<Text TextId="TID_FS0053_SE_FCS_SLS3_N_MAX" Value="SLS3: Ueberschreitung n_max"/>
+					<Text TextId="TID_FS0053_SE_FCS_SLS3_N_MAX_HELP" Value="Fehler ASF SLS3: Ueberschreitung n_max Startdrehrichtung waehrend Verzoegerungsphase"/>
+					<Text TextId="TID_FS0054_SE_FCS_SLS0_RAMP" Value="SLS0: Uerberschreitung n_sls"/>
+					<Text TextId="TID_FS0054_SE_FCS_SLS0_RAMP_HELP" Value="Fehler ASF SLS0: Ueberschreitung Drehzahlgrenze Startdrehrichtung Rampenfahrt"/>
+					<Text TextId="TID_FS0055_SE_FCS_SLS1_RAMP" Value="SLS1: Uerberschreitung n_sls"/>
+					<Text TextId="TID_FS0055_SE_FCS_SLS1_RAMP_HELP" Value="Fehler ASF SLS1: Ueberschreitung Drehzahlgrenze Startdrehrichtung Rampenfahrt"/>
+					<Text TextId="TID_FS0056_SE_FCS_SLS2_RAMP" Value="SLS2: Uerberschreitung n_sls"/>
+					<Text TextId="TID_FS0056_SE_FCS_SLS2_RAMP_HELP" Value="Fehler ASF SLS2: Ueberschreitung Drehzahlgrenze Startdrehrichtung Rampenfahrt"/>
+					<Text TextId="TID_FS0057_SE_FCS_SLS3_RAMP" Value="SLS3: Uerberschreitung n_sls"/>
+					<Text TextId="TID_FS0057_SE_FCS_SLS3_RAMP_HELP" Value="Fehler ASF SLS3: Ueberschreitung Drehzahlgrenze Startdrehrichtung Rampenfahrt"/>
+					<Text TextId="TID_FS0058_SE_FCS_SLS0_CONST_R" Value="SLS0: Uerberschreitung n_sls_r"/>
+					<Text TextId="TID_FS0058_SE_FCS_SLS0_CONST_R_HELP" Value="Fehler ASF SLS0: Ueberschreitung Drehzahlgrenze Konstantfahrt rechts"/>
+					<Text TextId="TID_FS0059_SE_FCS_SLS1_CONST_R" Value="SLS1: Uerberschreitung n_sls_r"/>
+					<Text TextId="TID_FS0059_SE_FCS_SLS1_CONST_R_HELP" Value="Fehler ASF SLS1: Ueberschreitung Drehzahlgrenze Konstantfahrt rechts"/>
+					<Text TextId="TID_FS005A_SE_FCS_SLS2_CONST_R" Value="SLS2: Uerberschreitung n_sls_r"/>
+					<Text TextId="TID_FS005A_SE_FCS_SLS2_CONST_R_HELP" Value="Fehler ASF SLS2: Ueberschreitung Drehzahlgrenze Konstantfahrt rechts"/>
+					<Text TextId="TID_FS005B_SE_FCS_SLS3_CONST_R" Value="SLS3: Uerberschreitung n_sls_r"/>
+					<Text TextId="TID_FS005B_SE_FCS_SLS3_CONST_R_HELP" Value="Fehler ASF SLS3: Ueberschreitung Drehzahlgrenze Konstantfahrt rechts"/>
+					<Text TextId="TID_FS005C_SE_FCS_SLS0_CONST_L" Value="SLS0: Uerberschreitung n_sls_l"/>
+					<Text TextId="TID_FS005C_SE_FCS_SLS0_CONST_L_HELP" Value="Fehler ASF SLS0: Ueberschreitung Drehzahlgrenze Konstantfahrt links"/>
+					<Text TextId="TID_FS005D_SE_FCS_SLS1_CONST_L" Value="SLS1: Uerberschreitung n_sls_l"/>
+					<Text TextId="TID_FS005D_SE_FCS_SLS1_CONST_L_HELP" Value="Fehler ASF SLS1: Ueberschreitung Drehzahlgrenze Konstantfahrt links"/>
+					<Text TextId="TID_FS005E_SE_FCS_SLS2_CONST_L" Value="SLS2: Uerberschreitung n_sls_l"/>
+					<Text TextId="TID_FS005E_SE_FCS_SLS2_CONST_L_HELP" Value="Fehler ASF SLS2: Ueberschreitung Drehzahlgrenze Konstantfahrt links"/>
+					<Text TextId="TID_FS005F_SE_FCS_SLS3_CONST_L" Value="SLS3: Uerberschreitung n_sls_l"/>
+					<Text TextId="TID_FS005F_SE_FCS_SLS3_CONST_L_HELP" Value="Fehler ASF SLS3: Ueberschreitung Drehzahlgrenze Konstantfahrt links"/>
+					<Text TextId="TID_FS0060_SE_FCS_SLS0_RAMP_GEGEN" Value="Uerbersch. n_sls0 Gegenrichtung"/>
+					<Text TextId="TID_FS0060_SE_FCS_SLS0_RAMP_GEGEN_HELP" Value="Fehler ASF SLS0: Ueberschreitung Grenzdrehzahl Gegenrichtung waehrend Verzoegerungsphase oder Rampenfahrt"/>
+					<Text TextId="TID_FS0061_SE_FCS_SLS1_RAMP_GEGEN" Value="Uerbersch. n_sls1 Gegenrichtung"/>
+					<Text TextId="TID_FS0061_SE_FCS_SLS1_RAMP_GEGEN_HELP" Value="Fehler ASF SLS1: Ueberschreitung Grenzdrehzahl Gegenrichtung waehrend Verzoegerungsphase oder Rampenfahrt"/>
+					<Text TextId="TID_FS0062_SE_FCS_SLS2_RAMP_GEGEN" Value="Uerbersch. n_sls2 Gegenrichtung"/>
+					<Text TextId="TID_FS0062_SE_FCS_SLS2_RAMP_GEGEN_HELP" Value="Fehler ASF SLS2: Ueberschreitung Grenzdrehzahl Gegenrichtung waehrend Verzoegerungsphase oder Rampenfahrt"/>
+					<Text TextId="TID_FS0063_SE_FCS_SLS3_RAMP_GEGEN" Value="Uerbersch. n_sls3 Gegenrichtung"/>
+					<Text TextId="TID_FS0063_SE_FCS_SLS3_RAMP_GEGEN_HELP" Value="Fehler ASF SLS3: Ueberschreitung Grenzdrehzahl Gegenrichtung waehrend Verzoegerungsphase oder Rampenfahrt"/>
+					<Text TextId="TID_FS0064_SE_FCS_SS1A_N_MAX" Value="SS1A: Ueberschreitung n_max"/>
+					<Text TextId="TID_FS0064_SE_FCS_SS1A_N_MAX_HELP" Value="Fehler ASF SS1A: Ueberschreitung Maximaldrehzahl"/>
+					<Text TextId="TID_FS0065_SE_FCS_SS1A_RAMP" Value="SS1A: Uebersch. n_max bei Rampe"/>
+					<Text TextId="TID_FS0065_SE_FCS_SS1A_RAMP_HELP" Value="Fehler ASF SS1A: Ueberschreitung Drehzahlgrenze Rampenfahrt"/>
+					<Text TextId="TID_FS0066_SE_FCS_SS1A_STANDSTILL" Value="SS1A: Uebersch. n_min bei SStand"/>
+					<Text TextId="TID_FS0066_SE_FCS_SS1A_STANDSTILL_HELP" Value="Fehler ASF SS1A: Ueberschreitung Mindestdrehzahl Stillstand"/>
+					<Text TextId="TID_FS0067_SE_FCS_STO_BYPASSED" Value="STO: Abschaltung ueberbrueckt"/>
+					<Text TextId="TID_FS0067_SE_FCS_STO_BYPASSED_HELP" Value="Fehler STO Abschaltung ueberbrueckt"/>
+					<Text TextId="TID_FS0068_SE_FCS_STO_NACHLAUF" Value="STO: Nachlaufzeit ueberschritten"/>
+					<Text TextId="TID_FS0068_SE_FCS_STO_NACHLAUF_HELP" Value="Fehler STO Nachlaufzeit im Testmodus ueberschritten"/>
+					<Text TextId="TID_FS0070_SE_FCS_SDI0_DIR_R" Value="Fehler SDI0: Drehrichtung rechts"/>
+					<Text TextId="TID_FS0070_SE_FCS_SDI0_DIR_R_HELP" Value="Fehler ASF SDI0: Gesperrte Drehrichtung rechts erkannt"/>
+					<Text TextId="TID_FS0071_SE_FCS_SDI1_DIR_R" Value="Fehler SDI1: Drehrichtung rechts"/>
+					<Text TextId="TID_FS0071_SE_FCS_SDI1_DIR_R_HELP" Value="Fehler ASF SDI1: Gesperrte Drehrichtung rechts erkannt"/>
+					<Text TextId="TID_FS0072_SE_FCS_SDI2_DIR_R" Value="Fehler SDI2: Drehrichtung rechts"/>
+					<Text TextId="TID_FS0072_SE_FCS_SDI2_DIR_R_HELP" Value="Fehler ASF SDI2: Gesperrte Drehrichtung rechts erkannt"/>
+					<Text TextId="TID_FS0073_SE_FCS_SDI3_DIR_R" Value="Fehler SDI3: Drehrichtung rechts"/>
+					<Text TextId="TID_FS0073_SE_FCS_SDI3_DIR_R_HELP" Value="Fehler ASF SDI3: Gesperrte Drehrichtung rechts erkannt"/>
+					<Text TextId="TID_FS0074_SE_FCS_SDI0_DIR_L" Value="Fehler SDI0: Drehrichtung links"/>
+					<Text TextId="TID_FS0074_SE_FCS_SDI0_DIR_L_HELP" Value="Fehler ASF SDI0: Gesperrte Drehrichtung links erkannt"/>
+					<Text TextId="TID_FS0075_SE_FCS_SDI1_DIR_L" Value="Fehler SDI1: Drehrichtung links"/>
+					<Text TextId="TID_FS0075_SE_FCS_SDI1_DIR_L_HELP" Value="Fehler ASF SDI1: Gesperrte Drehrichtung links erkannt"/>
+					<Text TextId="TID_FS0076_SE_FCS_SDI2_DIR_L" Value="Fehler SDI2: Drehrichtung links"/>
+					<Text TextId="TID_FS0076_SE_FCS_SDI2_DIR_L_HELP" Value="Fehler ASF SDI2: Gesperrte Drehrichtung links erkannt"/>
+					<Text TextId="TID_FS0077_SE_FCS_SDI3_DIR_L" Value="Fehler SDI3: Drehrichtung links"/>
+					<Text TextId="TID_FS0077_SE_FCS_SDI3_DIR_L_HELP" Value="Fehler ASF SDI3: Gesperrte Drehrichtung links erkannt"/>
+					<Text TextId="TID_FS0080_SE_FCS_PARA_DATASET_UNPLAUSIBLE" Value="Parametrierung unplausibel"/>
+					<Text TextId="TID_FS0080_SE_FCS_PARA_DATASET_UNPLAUSIBLE_HELP" Value="Die Parametrierung des Geraetes ist unplausibel"/>
+					<Text TextId="TID_FS0081_SE_FCS_PARA_DATASET_CORRUPT" Value="Parametrierung korrupt"/>
+					<Text TextId="TID_FS0081_SE_FCS_PARA_DATASET_CORRUPT_HELP" Value="Die Parametrierung des Geraetes ist korrupt"/>
+					<Text TextId="TID_FS0082_SE_FCS_PARA_DATASET_INCOMPATIBLE" Value="Parammetrierung inkompatibel"/>
+					<Text TextId="TID_FS0082_SE_FCS_PARA_DATASET_INCOMPATIBLE_HELP" Value="Die Parametrierung des Geraetes ist inkompatibel"/>
+					<Text TextId="TID_FS0083_SE_FCS_PARA_NO_DEVICE_CHANGE" Value="Fehler Geraetetausch"/>
+					<Text TextId="TID_FS0083_SE_FCS_PARA_NO_DEVICE_CHANGE_HELP" Value="Im autarken Betrieb wird kein automatischer Geraetetausch unterstuetzt"/>
+					<Text TextId="TID_FS0084_SE_FCS_PARA_ABOX_EMPTY" Value="S12-Parametersatz in A-Box fehlt"/>
+					<Text TextId="TID_FS0084_SE_FCS_PARA_ABOX_EMPTY_HELP" Value="Die A-Box enthaelt keinen S12-Parametersatz"/>
+					<Text TextId="TID_FS0085_SE_FCS_PARA_ABOX_STORE_ERROR" Value="Fehler Speicherung auf A-Box"/>
+					<Text TextId="TID_FS0085_SE_FCS_PARA_ABOX_STORE_ERROR_HELP" Value="Der Parametersatz konnte nicht auf die A-Box gespeichert werden"/>
+					<Text TextId="TID_FS0086_SE_FCS_PARA_EEPROM_CORRUPT" Value="Interner Parametersatz korrupt"/>
+					<Text TextId="TID_FS0086_SE_FCS_PARA_EEPROM_CORRUPT_HELP" Value="Der interne EEPROM-Parametersatz ist korrupt"/>
+					<Text TextId="TID_FS0087_SE_FCS_PARA_EBOX_COM_ERROR" Value="Fehler Steuerk.-Kommunikation"/>
+					<Text TextId="TID_FS0087_SE_FCS_PARA_EBOX_COM_ERROR_HELP" Value="Fehler bei der Kommunikation mit der Steuerkarte im Hochlauf"/>
+					<Text TextId="TID_FS0088_SE_FCS_PARA_APPR_STORE_ERROR" Value="Fehler Speicherung der Abnahme"/>
+					<Text TextId="TID_FS0088_SE_FCS_PARA_APPR_STORE_ERROR_HELP" Value="Die Abnahme konnte nicht auf die A-Box gespeichert werden"/>
+					<Text TextId="TID_FS0090_SE_FCS_ENC_ENCODER_ERROR" Value="Fehler Geber-Signalueberwachung"/>
+					<Text TextId="TID_FS0090_SE_FCS_ENC_ENCODER_ERROR_HELP" Value="Die Ueberwachung der Geber-Signale hat einen Fehler gemeldet"/>
+					<Text TextId="TID_FS0091_SE_FCS_ENC_ENCODER_SUPP_ERROR" Value="Fehler Geber-Pegelueberwachung"/>
+					<Text TextId="TID_FS0091_SE_FCS_ENC_ENCODER_SUPP_ERROR_HELP" Value="Die Ueberwachung der Pegel auf den Geber-Spursignale hat einen Fehler gemeldet"/>
+					<Text TextId="TID_FS0092_SE_FCS_ENC_ENCODER_SPEED_EXCEED" Value="Fehler Maximaldrehzahl"/>
+					<Text TextId="TID_FS0092_SE_FCS_ENC_ENCODER_SPEED_EXCEED_HELP" Value="Die ermittelte Geber-Drehzahl ueberschreitet den Maximalwert"/>
+					<Text TextId="TID_FS0093_SE_FCS_ENC_ENCODER_SIGNAL_BAD" Value="Stoerungen in den Spursignalen"/>
+					<Text TextId="TID_FS0093_SE_FCS_ENC_ENCODER_SIGNAL_BAD_HELP" Value="Die Gebersignale weisen zu viele Stoerungen auf"/>
+					<Text TextId="TID_FS1040_SE_FCS_HWDIAG_TEMPERATUR_ZUHOCH" Value="Umgebungstemperatur zu hoch"/>
+					<Text TextId="TID_FS1040_SE_FCS_HWDIAG_TEMPERATUR_ZUHOCH_HELP" Value="Fehler HWDIAG: Temperatur"/>
+					<Text TextId="TID_FS1041_SE_FCS_HWDIAG_TEMPERATUR_ZUNIEDRIG" Value="Umgebungstemperatur zu niedrig"/>
+					<Text TextId="TID_FS1041_SE_FCS_HWDIAG_TEMPERATUR_ZUNIEDRIG_HELP" Value="Fehler HWDIAG: Temperatur"/>
+					<Text TextId="TID_FS1042_SE_FCS_HWDIAG_U24V_ZUHOCH" Value="Versorgungsspannung zu hoch"/>
+					<Text TextId="TID_FS1042_SE_FCS_HWDIAG_U24V_ZUHOCH_HELP" Value="Fehler HWDIAG: 24V Spannungsversorgung zu hoch"/>
+					<Text TextId="TID_FS1043_SE_FCS_HWDIAG_U24V_ZUNIEDRIG" Value="Versorgungsspannung zu niedrig"/>
+					<Text TextId="TID_FS1043_SE_FCS_HWDIAG_U24V_ZUNIEDRIG_HELP" Value="Fehler HWDIAG: 24V Spannungsversorgung zu niedrig"/>
+					<Text TextId="TID_FS2000_SE_FCS_SP_SETPRM" Value="Zustandsfehler DSO Empfang FPAR"/>
+					<Text TextId="TID_FS2000_SE_FCS_SP_SETPRM_HELP" Value="Fehler SP: SetPrm Ablauf - DSO befindet sich nicht im gueltigen Zustand"/>
+					<Text TextId="TID_FS2001_SE_FCS_SP_SETPRM_SPD_STATE" Value="Fehler Uebernahme FPAR in DSO"/>
+					<Text TextId="TID_FS2001_SE_FCS_SP_SETPRM_SPD_STATE_HELP" Value="Fehler SP: SetPrm Ablauf - Uebernahme der FPar fehlgeschlagen"/>
+					<Text TextId="TID_FS2002_SE_FCS_SP_CHCFG" Value="Fehlerhafte Prozessdatenlaenge"/>
+					<Text TextId="TID_FS2002_SE_FCS_SP_CHCFG_HELP" Value="Fehler SP: Check Config Ablauf - Fehlerhafte Prozessdaten Laenge PA PE Daten"/>
+					<Text TextId="TID_FS2003_SE_FCS_SP_CHCFG_SPD" Value="CRC2 Konfigurationsfehler"/>
+					<Text TextId="TID_FS2003_SE_FCS_SP_CHCFG_SPD_HELP" Value="Fehler SP: Check Config Ablauf - Konfiguration im SPD fehlgeschlagen ungueltige CRC Laenge"/>
+					<Text TextId="TID_FS2004_SE_FCS_SP_CHCFG_SPD_RET_ERR" Value="Fehler im Konfigurationablauf"/>
+					<Text TextId="TID_FS2004_SE_FCS_SP_CHCFG_SPD_RET_ERR_HELP" Value="Fehler SP: Check Config Ablauf - Ungueltiger Return bei der Konfiguration des SPD"/>
+					<Text TextId="TID_FS2005_SE_FCS_SP_SETPRM_CHCFG_SEQ" Value="Zustand DSO bei Empfang CheckCfg"/>
+					<Text TextId="TID_FS2005_SE_FCS_SP_SETPRM_CHCFG_SEQ_HELP" Value="Fehler SP: SetPrm Check Config Ablauf"/>
+					<Text TextId="TID_FS2006_SE_FCS_SP_SPD" Value="Fehler im SPD aufgetreten"/>
+					<Text TextId="TID_FS2006_SE_FCS_SP_SPD_HELP" Value="Fehler SP: Fehler im Safety Protocol Driver"/>
+					<Text TextId="TID_FS2007_SE_FCS_SP_ZYK_DATA_COM" Value="Fehler in der Kommunikation"/>
+					<Text TextId="TID_FS2007_SE_FCS_SP_ZYK_DATA_COM_HELP" Value="Fehler SP: Fehler im zyklischen Datenaustausch"/>
+					<Text TextId="TID_FS2008_SE_FCS_SP_ZYK_DATA_WD" Value="Timeout Safety Protocol"/>
+					<Text TextId="TID_FS2008_SE_FCS_SP_ZYK_DATA_WD_HELP" Value="Fehler SP: Fehler im zyklischen Datenaustausch Timeout wurde erkannt"/>
+					<Text TextId="TID_FS2009_SE_FCS_SP_ZYK_DATA_PAS" Value="Sichere Prozessdaten eingestellt"/>
+					<Text TextId="TID_FS2009_SE_FCS_SP_ZYK_DATA_PAS_HELP" Value="Fehler SP: Fehler im zyklischen Datenaustausch Prozessdaten sind im Sicheren Zustand"/>
+					<Text TextId="TID_FS200A_SE_FCS_SP_ZYK_DATA_CLR" Value="SP Nulltelegramm empfangen"/>
+					<Text TextId="TID_FS200A_SE_FCS_SP_ZYK_DATA_CLR_HELP" Value="Fehler SP: Fehler im zyklischen Datenaustausch Null-Telegramm wurde empfangen"/>
+					<Text TextId="TID_FPS8040_SE_FCS_SP_ERRFPAR_01" Value="Mismatch of F_Dest_Add"/>
+					<Text TextId="TID_FPS8040_SE_FCS_SP_ERRFPAR_01_HELP" Value="Fehler FPar Parametrierung: Mismatch of safety destination address"/>
+					<Text TextId="TID_FPS8041_SE_FCS_SP_ERRFPAR_02" Value="F_Dest_Add not valid"/>
+					<Text TextId="TID_FPS8041_SE_FCS_SP_ERRFPAR_02_HELP" Value="Fehler FPar Parametrierung: Safety destination address not valid"/>
+					<Text TextId="TID_FPS8042_SE_FCS_SP_ERRFPAR_03" Value="F_Source_Add not valid"/>
+					<Text TextId="TID_FPS8042_SE_FCS_SP_ERRFPAR_03_HELP" Value="Fehler FPar Parametrierung: Safety source address not valid"/>
+					<Text TextId="TID_FPS8043_SE_FCS_SP_ERRFPAR_04" Value="F_WD_Time is 0 ms"/>
+					<Text TextId="TID_FPS8043_SE_FCS_SP_ERRFPAR_04_HELP" Value="Fehler FPar Parametrierung: Safety watchdog Time value is 0ms"/>
+					<Text TextId="TID_FPS8044_SE_FCS_SP_ERRFPAR_05" Value="F_SIL exceeds SIL f. application"/>
+					<Text TextId="TID_FPS8044_SE_FCS_SP_ERRFPAR_05_HELP" Value="Fehler FPar Parametrierung: Parameter F_SIL exceeds"/>
+					<Text TextId="TID_FPS8045_SE_FCS_SP_ERRFPAR_06" Value="F_CRC_Length does not match"/>
+					<Text TextId="TID_FPS8045_SE_FCS_SP_ERRFPAR_06_HELP" Value="Fehler FPar Parametrierung: Parameter F_CRC_Length not valid"/>
+					<Text TextId="TID_FPS8046_SE_FCS_SP_ERRFPAR_07" Value="F-Parameter set incorrect"/>
+					<Text TextId="TID_FPS8046_SE_FCS_SP_ERRFPAR_07_HELP" Value="Fehler FPar Parametrierung: Version of F Parameter Set incorrect"/>
+					<Text TextId="TID_FPS8047_SE_FCS_SP_ERRFPAR_08" Value="Inconsistent FPar CRC1-Fault"/>
+					<Text TextId="TID_FPS8047_SE_FCS_SP_ERRFPAR_08_HELP" Value="Fehler FPar Parametrierung: Data inconsistent in received F-Parameter block"/>
+					<Text TextId="TID_FPS8048_SE_FCS_SP_ERRFPAR_09" Value="Device information, see manual"/>
+					<Text TextId="TID_FPS8048_SE_FCS_SP_ERRFPAR_09_HELP" Value="Fehler FPar Parametrierung: Device specific diagnosis"/>
+					<Text TextId="TID_FPS8049_SE_FCS_SP_ERRFPAR_10" Value="Save iParameter WDT exceeded"/>
+					<Text TextId="TID_FPS8049_SE_FCS_SP_ERRFPAR_10_HELP" Value="Fehler FPar Parametrierung: Save iParameter watchdog time exceeded"/>
+					<Text TextId="TID_FPS804A_SE_FCS_SP_ERRFPAR_11" Value="Restore iParameter WDT exceeded"/>
+					<Text TextId="TID_FPS804A_SE_FCS_SP_ERRFPAR_11_HELP" Value="Fehler FPar Parametrierung: Restore iParameter watchdog time exceeded"/>
+					<Text TextId="TID_FPS804B_SE_FCS_SP_ERRFPAR_12" Value="Inconsistent iParameter iParCRC"/>
+					<Text TextId="TID_FPS804B_SE_FCS_SP_ERRFPAR_12_HELP" Value="Fehler FPar Parametrierung: Inconsistent IParameters (iParError)"/>
+					<Text TextId="TID_FPS804C_SE_FCS_SP_ERRFPAR_13" Value="F_Block_ID not supported"/>
+					<Text TextId="TID_FPS804C_SE_FCS_SP_ERRFPAR_13_HELP" Value="Fehler FPar Parametrierung: F_BlockID not supported"/>
+					<Text TextId="TID_FPS804D_SE_FCS_SP_ERRFPAR_14" Value="Transmission error: CRC2 error"/>
+					<Text TextId="TID_FPS804D_SE_FCS_SP_ERRFPAR_14_HELP" Value="Fehler FPar Parametrierung: Transmission error: data inconsistent"/>
+					<Text TextId="TID_FPS804E_SE_FCS_SP_ERRFPAR_15" Value="Transmission error: WDT elapsed"/>
+					<Text TextId="TID_FPS804E_SE_FCS_SP_ERRFPAR_15_HELP" Value="Fehler FPar Parametrierung: Transmission error: timeout"/>
+					<Text TextId="TID_FPS804F_SE_FCS_SP_ERRFPAR_16" Value="Reserved for further use"/>
+					<Text TextId="TID_FPS804F_SE_FCS_SP_ERRFPAR_16_HELP" Value="Fehler FPar Parametrierung: Reserved do not use numbers, do not evaluate numbers"/>
+					<!--AUTO_MERGE_TAG_END_EXTERNALTEXT_GER-->
+				</Language>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

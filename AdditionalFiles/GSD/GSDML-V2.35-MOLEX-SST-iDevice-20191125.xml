@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.35.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0127" DeviceID="0x5001">
+      <InfoText TextId="Device sale Name"/>
+      <VendorName Value="Molex"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="SST IO-Device"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DIM 1" MultipleWriteSupported="true" NameOfStationNotTransferable="true" PhysicalSlots="0..2" ModuleIdentNumber="0x10100000" MinDeviceInterval="32" ImplementationType="Motorola" DNS_CompatibleName="sst-idevice" FixedInSlots="0" ObjectUUID_LocalIndex="1" IO_SupervisorSupported="false" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" CheckDeviceID_Allowed="true" PNIO_Version="V2.35" ResetToFactoryModes="2" LLDP_NoD_Supported="true">
+          <ModuleInfo>
+            <Name TextId="DAP"/>
+            <InfoText TextId="DAP Desc"/>
+            <VendorName Value="Molex"/>
+            <OrderNumber Value="SST-PN-2-PE/PEH"/>
+          </ModuleInfo>
+          <CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+            <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+            <SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="262" MaxOutputLength="262"/>
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="IN_MODULE" FixedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="OUT_MODULE" FixedInSlots="2"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="VSMI 1" SubmoduleIdentNumber="0x10110000" MayIssueProcessAlarm="true">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="DAP"/>
+                <InfoText TextId="DAP Desc"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="ISMI00000001" SupportedProtocols="LLDP;SNMP" DCP_HelloSupported="false" NetworkComponentDiagnosisSupported="false" SubslotNumber="32768" TextId="TOK_Subslot_8000" SubmoduleIdentNumber="0x10110001" SupportedRT_Classes="RT_CLASS_1" PTP_BoundarySupported="true" DCP_BoundarySupported="true" Writeable_IM_Records="1 2 3 4">
+              <ApplicationRelations PullModuleAlarmSupported="true" StartupMode="Advanced;Legacy">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client" MRPD_Supported="false" MRT_Supported="false" AdditionalProtocolsSupported="false"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_1P1" SubslotNumber="32769" MAUType="100BASETXFD" MAUTypes="16" TextId="TOK_Port1" SubmoduleIdentNumber="0x10110002" SupportsRingportConfig="false" IsDefaultRingport="true" CheckMAUTypeSupported="true" LinkStateDiagnosisCapability="Up+Down">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_1P2" SubslotNumber="32770" MAUType="100BASETXFD" MAUTypes="16" TextId="TOK_Port2" SubmoduleIdentNumber="0x10110003" SupportsRingportConfig="false" IsDefaultRingport="true" CheckMAUTypeSupported="true" LinkStateDiagnosisCapability="Up+Down">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <!--Define the Input module for an IDevice-->
+        <ModuleItem ID="IN_MODULE" ModuleIdentNumber="0x10200000" PhysicalSubslots="1..1">
+          <ModuleInfo CategoryRef="Input slot">
+            <Name TextId="Input Slot iDevice"/>
+            <InfoText TextId="Input Slot iDevice Info"/>
+            <OrderNumber Value="SDK-PFN-IOCV6"/>
+          </ModuleInfo>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_1_Byte" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_2_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_4_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_8_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_16_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_32_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_64_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_128_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DI_256_Bytes" AllowedInSubslots="1..1"/>
+          </UseableSubmodules>
+        </ModuleItem>
+        <!--Define the Output module for an IDevice-->
+        <ModuleItem ID="OUT_MODULE" ModuleIdentNumber="0x10300000" PhysicalSubslots="1..1">
+          <ModuleInfo CategoryRef="Output slot">
+            <Name TextId="Output Slot iDevice"/>
+            <InfoText TextId="Output Slot iDevice Info"/>
+            <OrderNumber Value="SDK-PFN-IOCV6"/>
+          </ModuleInfo>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_1_Byte" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_2_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_4_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_8_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_16_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_32_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_64_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_128_Bytes" AllowedInSubslots="1..1"/>
+            <SubmoduleItemRef SubmoduleItemTarget="DO_256_Bytes" AllowedInSubslots="1..1"/>
+          </UseableSubmodules>
+        </ModuleItem>
+      </ModuleList>
+      <SubmoduleList>
+        <SubmoduleItem ID="DI_1_Byte" SubmoduleIdentNumber="0x10400000" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned8" TextId="Data IN 1 Byte"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 1"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_2_Bytes" SubmoduleIdentNumber="0x10400001" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned16" TextId="Data OUT 2 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 2"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_4_Bytes" SubmoduleIdentNumber="0x10400002" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 4"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_8_Bytes" SubmoduleIdentNumber="0x10400003" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 8"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_16_Bytes" SubmoduleIdentNumber="0x10400004" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 16"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_32_Bytes" SubmoduleIdentNumber="0x10400005" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 32"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_64_Bytes" SubmoduleIdentNumber="0x10400006" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 64"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_128_Bytes" SubmoduleIdentNumber="0x10400007" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 128"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DI_256_Bytes" SubmoduleIdentNumber="0x10400008" MayIssueProcessAlarm="true">
+          <IOData>
+            <Input>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Input>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot In 256"/>
+            <InfoText TextId="Subslot In Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_1_Byte" SubmoduleIdentNumber="0x10400010" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned8" TextId="Data OUT 1 Byte"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 1"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_2_Bytes" SubmoduleIdentNumber="0x10400011" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned16" TextId="Data OUT 2 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 2"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_4_Bytes" SubmoduleIdentNumber="0x10400012" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 4"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_8_Bytes" SubmoduleIdentNumber="0x10400013" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 8"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_16_Bytes" SubmoduleIdentNumber="0x10400014" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 16"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_32_Bytes" SubmoduleIdentNumber="0x10400015" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 32"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_64_Bytes" SubmoduleIdentNumber="0x10400016" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 64"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_128_Bytes" SubmoduleIdentNumber="0x10400017" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 128"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+        <SubmoduleItem ID="DO_256_Bytes" SubmoduleIdentNumber="0x10400018" MayIssueProcessAlarm="true">
+          <IOData>
+            <Output>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+              <DataItem DataType="Unsigned32" TextId="Data OUT 4 Bytes"/>
+            </Output>
+          </IOData>
+          <ModuleInfo CategoryRef="Main Subslot List">
+            <Name TextId="Subslot Out 256"/>
+            <InfoText TextId="Subslot Out Desc"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+      </SubmoduleList>
+      <CategoryList>
+        <CategoryItem ID="Input slot" TextId="Input slot"/>
+        <CategoryItem ID="Output slot" TextId="Output slot"/>
+        <CategoryItem ID="Modular slot" TextId="Modular slot"/>
+        <CategoryItem ID="Main Subslot List" TextId="Main Subslot List"/>
+      </CategoryList>
+      <!--      -->
+      <!-- Text -->
+      <!--      -->
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!-- Information -->
+          <Text TextId="TOK_Subslot_8000" Value="X1"/>
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1"/>
+          <Text TextId="TOK_Subslot_8002" Value="X1 P2"/>
+          <Text TextId="Data IN 1 Byte" Value="Input 1 Byte"/>
+          
+          
+          <Text TextId="Data OUT 1 Byte" Value="Output 1 Byte"/>
+          <Text TextId="Data OUT 2 Bytes" Value="Output 2 Bytes"/>
+          <Text TextId="Data OUT 4 Bytes" Value="Output 4 Bytes"/>
+          <Text TextId="TOK_Port1" Value="Port 1"/>
+          <Text TextId="TOK_Port2" Value="Port 2"/>
+          
+          <Text TextId="Main Subslot List" Value="Main Subslot"/>
+          <Text TextId="Subslot In 1" Value="Subslot In 1 Byte"/>
+          <Text TextId="Subslot In 2" Value="Subslot In 2 Bytes"/>
+          <Text TextId="Subslot In 4" Value="Subslot In 4 Bytes"/>
+          <Text TextId="Subslot In 8" Value="Subslot In 8 Bytes"/>
+          <Text TextId="Subslot In 16" Value="Subslot In 16 Bytes"/>
+          <Text TextId="Subslot In 32" Value="Subslot In 32 Bytes"/>
+          <Text TextId="Subslot In 64" Value="Subslot In 64 Bytes"/>
+          <Text TextId="Subslot In 128" Value="Subslot In 128 Bytes"/>
+          <Text TextId="Subslot In 256" Value="Subslot In 256 Bytes"/>
+          <Text TextId="Subslot In Desc" Value="Subslot In Description"/>
+          <Text TextId="Subslot Out 1" Value="Subslot Out 1 Byte"/>
+          <Text TextId="Subslot Out 2" Value="Subslot Out 2 Bytes"/>
+          <Text TextId="Subslot Out 4" Value="Subslot Out 4 Bytes"/>
+          <Text TextId="Subslot Out 8" Value="Subslot Out 8 Bytes"/>
+          <Text TextId="Subslot Out 16" Value="Subslot Out 16 Bytes"/>
+          <Text TextId="Subslot Out 32" Value="Subslot Out 32 Bytes"/>
+          <Text TextId="Subslot Out 64" Value="Subslot Out 64 Bytes"/>
+          <Text TextId="Subslot Out 128" Value="Subslot Out 128 Bytes"/>
+          <Text TextId="Subslot Out 256" Value="Subslot Out 256 Bytes"/>
+          <Text TextId="Subslot Out Desc" Value="SubslotOut Description"/>
+          
+          
+          <Text TextId="Modular slot" Value="Modular slot"/>
+          <Text TextId="Output slot" Value="Output slot"/>
+          <Text TextId="Input slot" Value="Input slot"/>
+          <Text TextId="Device sale Name" Value="Molex SST-PN-2-PE/PEH"/>
+          <Text TextId="DAP" Value="SST2 IDevice 1Slot In 1 Slot Out"/>
+          <Text TextId="DAP Desc" Value="SST2 PCI card IO-Controller IDevice"/>
+          
+          
+          <!-- Module Name -->
+          <Text TextId="Input Slot iDevice" Value="Input Slot iDevice"/>
+          <Text TextId="Input Slot iDevice Info" Value="Input Slot iDevice"/>
+          <Text TextId="Output Slot iDevice" Value="Output Slot iDevice"/>
+          <Text TextId="Output Slot iDevice Info" Value="Output Slot iDevice"/>
+          
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

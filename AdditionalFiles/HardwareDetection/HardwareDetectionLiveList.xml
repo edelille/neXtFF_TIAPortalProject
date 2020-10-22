@@ -1,0 +1,20 @@
+<OnlineDevices>
+  <OnlineDevice VendorID="2A" DeviceID="313" TypeID="2A0313" DeviceType="ET200SP">
+    <DeviceRole>Device</DeviceRole>
+    <NameOfStation>distributedxaioxas0150da</NameOfStation>
+    <MacAddress>AC-64-17-83-B9-C8</MacAddress>
+    <IPAddress>192.168.0.5</IPAddress>
+  </OnlineDevice>
+  <OnlineDevice VendorID="2A" DeviceID="A0B" TypeID="2A0A0B" DeviceType="SCALANCE XC-200">
+    <DeviceRole>Device</DeviceRole>
+    <NameOfStation>switchxb18774</NameOfStation>
+    <MacAddress>D4-F5-27-0D-C0-3E</MacAddress>
+    <IPAddress>192.168.1.2</IPAddress>
+  </OnlineDevice>
+  <OnlineDevice VendorID="2A" DeviceID="313" TypeID="2A0313" DeviceType="ET200SP">
+    <DeviceRole>Device</DeviceRole>
+    <NameOfStation>distributedxaioxas03915b</NameOfStation>
+    <MacAddress>AC-64-17-83-BA-01</MacAddress>
+    <IPAddress>192.168.0.3</IPAddress>
+  </OnlineDevice>
+</OnlineDevices>
